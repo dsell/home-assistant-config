@@ -1,0 +1,17 @@
+        
+  - platform: snmp
+    name: 'Big-fileserver-uptime'
+    host: 192.168.1.125
+    baseoid: 1.3.6.1.2.1.1.3.0
+    accept_errors: true
+    unit_of_measurement: 'minutes'
+    value_template: '{{((value | int) / 6000) | int}}'
+
+
+  - platform: snmp
+    name: 'fileserver-uptime'
+    host: 192.168.1.205
+    baseoid: 1.3.6.1.2.1.1.3.0
+    accept_errors: true
+    unit_of_measurement: 'minutes'
+    value_template: '{{((value | int) / 6000) | int}}'

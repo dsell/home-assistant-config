@@ -1,0 +1,4 @@
+
+- platform: aurora
+  forecast_threshold: 75
+  name: aurora_visibility

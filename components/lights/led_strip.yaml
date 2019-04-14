@@ -1,0 +1,39 @@
+- platform: mqtt
+  name: "LED 1"
+  command_topic: "cmnd/D1mini1/POWER"
+#  on_command_type: "brightness"
+  brightness_command_topic: "cmnd/D1mini1/Dimmer"
+  brightness_state_topic: "tele/D1mini1/STATE"
+  brightness_scale: 254
+  brightness_value_template: "{{value_json.Dimmer}}"
+  state_topic: "tele/D1mini1/STATE"
+  state_value_template: "{{value_json.POWER}}"
+  payload_on: "ON"
+  payload_off: "OFF"
+  availability_topic: "tele/D1mini1/LWT"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  rgb_command_topic: "cmnd/D1mini1/color"
+  rgb_state_topic: "state/D1mini1/color"
+  rgb_value_template: "{{value_json.Color.rgb | join(',')}}"
+  effect_command_topic: "cmnd/D1mini1/Scheme"
+  effect_state_topic: "tele/D1mini1/STATE"
+  effect_value_template: "{{value_json.Scheme}}"
+  effect_list:
+    - 0 SolidColor  # single color for LED light (default)
+    - 1 WakeUp      # start wake up sequence (same as Wakeup)
+    - 2 CycleUp     # cycle up through colors using Speed option
+    - 3 CycleDown   # cycle down through colors using Speed option
+    - 4 CycleRandom # random cycle through colors using Speed and Fade
+    - 5 Clock       # clock mode (example)
+    - 6 CandleLight # candlelight pattern
+    - 7 RGB         # RGB pattern
+    - 8 Christmas   # Christmas pattern
+    - 9 Blue White Chase
+    - 10 Xmas
+    - 11 Rainbow
+    - 12 Fire        # fire pattern
+  qos: 0
+  retain: true
+  optimistic: false 
+   

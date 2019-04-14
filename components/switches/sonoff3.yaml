@@ -1,0 +1,13 @@
+  
+- platform: mqtt
+  name: "Sonoff3 Power State"
+  state_topic: "tele/sonoff3/STATE"
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/sonoff3/POWER"
+  availability_topic: "tele/sonoff3/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false

@@ -1,0 +1,254 @@
+
+
+title: Internals
+icon: mdi:pencil
+cards:
+  - type: 'custom:compact-custom-header'
+    
+
+#----------------------------------
+
+
+  - type: vertical-stack
+    cards:
+    
+      - type: gauge
+        name: Dennis' Phone Batt.
+        entity: sensor.phone_battery
+        severity:
+          red: 0
+          yellow: 25
+          green: 60
+    
+      - type: entities
+        entities:
+          - entity: sensor.phone_charging
+          - entity: sensor.phone_temperature
+          - entity: sensor.phone_humidity
+          - entity: sensor.phone_barometric_pressure
+          - entity: sensor.phone_steps
+          - entity: sensor.phone_screen_locked
+          - entity: sensor.phone_screen_on
+          - entity: sensor.phone_screen_orientation
+          - entity: sensor.phone_foreground_app
+          - entity: sensor.phone_wifi
+          - entity: sensor.phone_carrier
+          - entity: sensor.phone_acc_x
+          - entity: sensor.phone_acc_y
+          - entity: sensor.phone_acc_z
+          
+#----------------------------------
+
+  - type: entities
+    title: "Sonoff #1"
+    show_header_toggle: false
+    entities:
+      - entity: switch.sonoff1_power_state
+        secondary_info: last-changed
+      - sensor.sonoff1_temperature
+      - sensor.sonoff1_humidity
+      - sensor.sonoff1_uptime
+      - sensor.sonoff1_wifi_downtime
+      - sensor.sonoff1_hostname
+      - sensor.sonoff1_mac
+      - sensor.sonoff1_wifi_ssid
+      - sensor.sonoff1_wifi_bssid
+      - sensor.sonoff1_wifi_channel
+      - sensor.sonoff1_wifi_signal_strength
+      - sensor.sonoff1_load_avg
+      - sensor.sonoff1_firmware_version
+      - sensor.sonoff1_ip
+
+#----------------------------------
+
+  - type: entities
+    title: "Sonoff #2"
+    show_header_toggle: false
+    entities:
+      - entity: switch.sonoff2_power_state
+        secondary_info: last-changed
+      - sensor.sonoff2_temperature
+      - sensor.sonoff2_humidity
+      - sensor.sonoff2_uptime
+      - sensor.sonoff2_wifi_downtime
+      - sensor.sonoff2_hostname
+      - sensor.sonoff2_mac
+      - sensor.sonoff2_wifi_ssid
+      - sensor.sonoff2_wifi_bssid
+      - sensor.sonoff2_wifi_channel
+      - sensor.sonoff2_wifi_signal_strength
+      - sensor.sonoff2_load_avg
+      - sensor.sonoff2_firmware_version
+      - sensor.sonoff2_ip
+      
+#----------------------------------
+
+  - type: entities
+    title: "Sonoff #3"
+    show_header_toggle: false
+    entities:
+      - entity: switch.sonoff3_power_state
+        secondary_info: last-changed
+      - sensor.sonoff3_temperature
+      - sensor.sonoff3_humidity
+      - sensor.sonoff3_uptime
+      - sensor.sonoff3_wifi_downtime
+      - sensor.sonoff3_hostname
+      - sensor.sonoff3_mac
+      - sensor.sonoff3_wifi_ssid
+      - sensor.sonoff3_wifi_bssid
+      - sensor.sonoff3_wifi_channel
+      - sensor.sonoff3_wifi_signal_strength
+      - sensor.sonoff3_load_avg
+      - sensor.sonoff3_firmware_version
+      - sensor.sonoff3_ip
+
+
+  - type: entities
+    title: "Sonoff #4"
+    show_header_toggle: false
+    entities:
+      - entity: switch.sonoff4_power_state
+        secondary_info: last-changed
+      - sensor.sonoff4_uptime
+      - sensor.sonoff4_wifi_downtime
+      - sensor.sonoff4_hostname
+      - sensor.sonoff4_mac
+      - sensor.sonoff4_wifi_ssid
+      - sensor.sonoff4_wifi_bssid
+      - sensor.sonoff4_wifi_channel
+      - sensor.sonoff4_wifi_signal_strength
+      - sensor.sonoff4_load_avg
+      - sensor.sonoff4_firmware_version
+      - sensor.sonoff4_ip
+    
+#----------------------------------      
+      
+  - type: entities
+    title: "Sonoff #5"
+    show_header_toggle: false
+    entities:
+      - entity: switch.sonoff5_power_state
+        secondary_info: last-changed
+      - sensor.sonoff5_uptime
+      - sensor.sonoff5_wifi_downtime
+      - sensor.sonoff5_hostname
+      - sensor.sonoff5_mac
+      - sensor.sonoff5_wifi_ssid
+      - sensor.sonoff5_wifi_bssid
+      - sensor.sonoff5_wifi_channel
+      - sensor.sonoff5_wifi_signal_strength
+      - sensor.sonoff5_load_avg
+      - sensor.sonoff5_firmware_version
+      - sensor.sonoff5_ip
+    
+#----------------------------------
+      
+  - type: entities
+    title: "D1 Mini #1"
+    show_header_toggle: false
+    entities:
+      - entity: light.led_1
+        secondary_info: last-changed
+      - sensor.d1mini1_dimmer
+      - sensor.d1mini1_color
+      - sensor.d1mini1_scheme
+      - switch.d1mini1_led_state
+      - sensor.d1mini1_uptime
+      - sensor.d1mini1_wifi_downtime
+      - sensor.d1mini1_hostname
+      - sensor.d1mini1_mac
+      - sensor.d1mini1_wifi_ssid
+      - sensor.d1mini1_wifi_bssid
+      - sensor.d1mini1_wifi_channel
+      - sensor.d1mini1_wifi_signal_strength
+      - sensor.d1mini1_load_avg
+      - sensor.d1mini1_firmware_version
+      - sensor.d1mini1_ip
+   
+
+#----------------------------------
+      
+  - type: entities
+    title: "D1 Mini #2"
+    show_header_toggle: false
+    entities:
+ #     - entity: light.led_2
+ #       secondary_info: last-changed
+      - sensor.d1mini2_dimmer
+      - sensor.d1mini2_color
+      - sensor.d1mini2_scheme
+#      - switch.d1mini2_led_state
+      - sensor.d1mini2_uptime
+      - sensor.d1mini2_wifi_downtime
+      - sensor.d1mini2_hostname
+      - sensor.d1mini2_mac
+      - sensor.d1mini2_wifi_ssid
+      - sensor.d1mini2_wifi_bssid
+      - sensor.d1mini2_wifi_channel
+      - sensor.d1mini2_wifi_signal_strength
+      - sensor.d1mini2_load_avg
+      - sensor.d1mini2_firmware_version
+      - sensor.d1mini2_ip
+
+#----------------------------------
+      
+  - type: entities
+    title: "D1 Mini #3"
+    show_header_toggle: false
+    entities:
+#      - entity: light.led_3
+#        secondary_info: last-changed
+      - sensor.d1mini3_dimmer
+      - sensor.d1mini3_color
+      - sensor.d1mini3_scheme
+#      - switch.d1mini3_led_state
+      - sensor.d1mini3_uptime
+      - sensor.d1mini3_wifi_downtime
+      - sensor.d1mini3_hostname
+      - sensor.d1mini3_mac
+      - sensor.d1mini3_wifi_ssid
+      - sensor.d1mini3_wifi_bssid
+      - sensor.d1mini3_wifi_channel
+      - sensor.d1mini3_wifi_signal_strength
+      - sensor.d1mini3_load_avg
+      - sensor.d1mini3_firmware_version
+      - sensor.d1mini3_ip
+            
+#----------------------------------
+ #--------------------------------------
+
+  - type: entities
+    title: Shop Activity
+    show_header_toggle: false
+    icon: mdi:motion-sensor
+    entities:
+      - binary_sensor.shop_door_motion
+      - binary_sensor.shop_motion
+
+#--------------------------------------
+
+  - type: entities
+    title: OctoPrint Activity
+    show_header_toggle: false
+    icon: mdi:printer
+    entities:
+      - sensor.octoprint_time_elapsed
+      - sensor.octoprint_time_remaining
+      - sensor.octoprint_job_percentage
+      - sensor.octoprint_actual_tool0_temp
+      - sensor.octoprint_target_tool0_temp
+      - sensor.octoprint_target_bed_temp
+      - sensor.octoprint_actual_bed_temp
+      - sensor.octoprint_current_state
+      - binary_sensor.octoprint_printing
+      - binary_sensor.octoprint_printing_error
+      
+  #-----------------------------------
+    
+  - type: entities
+    title: Ping For Updated Sonoff Data
+    show_header_toggle: false
+    icon: mdi:sonar
+    entities: 
+      - script.refresh_sonoffs

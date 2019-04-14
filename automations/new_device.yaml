@@ -1,0 +1,24 @@
+##############################################################################
+###  New Device has connected to the network.  let everyone know.
+##############################################################################
+
+- alias: "New device connected"
+  trigger:
+    - platform: event
+      event_type: device_tracker_new_device
+
+  action:
+#    - wait_template: >-
+#        {{ not is_state('media_player.livingroomCC', 'playing') }}
+
+    - service: script.zanzito_say
+      data:
+        dest_id: "DennisPhone" 
+        message: 'There has been a new device detected on the network.  Be sure to appropriately catagorize {{trigger.event.data.host_name}} .'
+    - service: persistent_notification.create
+      data:
+        message: "New device detected on the network!"
+        title: "IP"
+        notification_id: "ip_alert"        
+
+ ##############################################################################

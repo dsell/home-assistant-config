@@ -1,0 +1,29 @@
+- platform: mqtt
+  name: "Light 1"
+  command_topic: "cmnd/light1/POWER"
+  state_topic: "tele/light1/STATE"
+  state_value_template: "{{value_json.POWER}}"
+  availability_topic: "tele/light1/LWT"
+  brightness_command_topic: "cmnd/light1/Dimmer"
+  brightness_state_topic: "tele/light1/STATE"
+  brightness_scale: 100
+  on_command_type: "brightness"
+  brightness_value_template: "{{value_json.Dimmer}}"
+  rgb_command_topic: "cmnd/light1/Color2"
+  rgb_state_topic: "tele/light1/STATE"
+  rgb_value_template: "{{value_json.Color.split(',')[0:3]|join(',')}}"
+  effect_command_topic: "cmnd/light1/Scheme"
+  effect_state_topic: "tele/light1/STATE"
+  effect_value_template: "{{value_json.Scheme}}"
+  effect_list:
+    - 0 # single color for LED light (default)
+    - 1 # start wake up sequence (same as Wakeup)
+    - 2 # cycle up through colors using Speed option
+    - 3 # cycle down through colors using Speed option
+    - 4 # random cycle through colors using Speed and Fade
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  qos: 1
+  retain: false

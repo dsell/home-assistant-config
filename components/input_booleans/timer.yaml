@@ -1,0 +1,3 @@
+  timer_start:
+    name: Start Timer
+    icon: mdi:calendar

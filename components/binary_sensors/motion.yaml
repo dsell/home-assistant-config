@@ -1,0 +1,11 @@
+  - platform: mqtt
+    name: "Shop Door Motion"
+    state_topic: "/motioneye/shop-door"
+    payload_on: "motion"
+    off_delay: 60
+    
+  - platform: mqtt
+    name: "Shop Motion"
+    state_topic: "/motioneye/shop-camera"
+    payload_on: "motion"
+    off_delay: 60

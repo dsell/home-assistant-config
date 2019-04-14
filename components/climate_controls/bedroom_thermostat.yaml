@@ -1,0 +1,15 @@
+  - platform: generic_thermostat
+    name: Bedroom Thermostat
+    heater: switch.sonoff1_power_state
+    target_sensor: sensor.sonoff1_temperature
+    min_temp: 40
+    max_temp: 90
+    min_cycle_duration: 
+      minutes: 5
+    initial_operation_mode: "off"
+    target_temp: 68
+    away_temp: 45
+    cold_tolerance: 0.5
+    hot_tolerance: 0.5
+    ac_mode: false
+  

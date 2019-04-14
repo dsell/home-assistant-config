@@ -1,0 +1,93 @@
+- platform: mqtt
+  name: "Phone Battery"
+  state_topic: "zanzito/DennisPhone/battery_level"
+  qos: 0
+  unit_of_measurement: "%"
+    
+- platform: mqtt
+  name: "Phone Temperature"
+  state_topic: "zanzito/DennisPhone/battery_level"
+  value_template: "{{ (value | float * 1.8 | float - 32) | round(2) }}"
+  qos: 0
+  unit_of_measurement: "F"
+
+- platform: mqtt
+  name: "Phone Barometric Pressure"
+  state_topic: "zanzito/DennisPhone/barometer_sensor"
+  value_template: "{{ (value | float * 0.029529983071445) | round(2) }}"
+  qos: 0
+  unit_of_measurement: "in Hg"
+  
+- platform: mqtt
+  name: "Phone Humidity"
+  state_topic: "zanzito/DennisPhone/shtc1_relative_humidity_sensor"
+  qos: 0
+  unit_of_measurement: "%"
+  
+- platform: mqtt
+  name: "Phone Steps"
+  state_topic: "zanzito/DennisPhone/samsung_step_counter_sensor"
+  qos: 0
+  
+- platform: mqtt
+  name: "Phone Screen Locked"
+  value_template: '{{ value_json.screen_locked }}'
+  state_topic: "zanzito/DennisPhone/device_info"
+  qos: 0
+
+- platform: mqtt
+  name: "Phone Charging"
+  state_topic: "zanzito/DennisPhone/device_info"
+  value_template: '{{ value_json.battery_charging }}'
+  qos: 0  
+
+- platform: mqtt
+  name: "Phone Screen On"
+  state_topic: "zanzito/DennisPhone/device_info"
+  value_template: '{{ value_json.screen_on }}'
+  qos: 0  
+  
+- platform: mqtt
+  name: "Phone Screen Orientation"
+  state_topic: "zanzito/DennisPhone/device_info"
+  value_template: '{{ value_json.screen_orientation }}'
+  qos: 0  
+  
+- platform: mqtt
+  name: "Phone Foreground App"
+  state_topic: "zanzito/DennisPhone/device_info"
+  value_template: '{{ value_json.current_foreground_app }}'
+  qos: 0  
+  
+- platform: mqtt
+  name: "Phone WiFi"
+  state_topic: "zanzito/DennisPhone/device_info"
+  value_template: '{{ value_json.current_wifi }}'
+  qos: 0  
+  
+- platform: mqtt
+  name: "Phone Carrier"
+  state_topic: "zanzito/DennisPhone/device_info"
+  value_template: '{{ value_json.current_operator }}'
+  qos: 0    
+  
+- platform: mqtt
+  name: "Phone Acc X"
+  state_topic: "zanzito/DennisPhone/k330_3-axis_accelerometer"
+  value_template: '{{ value_json.value0 }}'
+  qos: 0    
+  unit_of_measurement: "m/s^2" 
+  
+- platform: mqtt
+  name: "Phone Acc Y"
+  state_topic: "zanzito/DennisPhone/k330_3-axis_accelerometer"
+  value_template: '{{ value_json.value1 }}'
+  qos: 0    
+  unit_of_measurement: "m/s^2" 
+  
+- platform: mqtt
+  name: "Phone Acc Z"
+  state_topic: "zanzito/DennisPhone/k330_3-axis_accelerometer"
+  value_template: '{{ value_json.value2 }}'
+  qos: 0    
+  unit_of_measurement: "m/s^2"    

@@ -1,0 +1,119 @@
+#-------------------------------------
+    
+ 
+  - platform: mqtt
+    name: "Sonoff3 Temperature"
+    state_topic: "tele/sonoff3/SENSOR"
+    value_template: "{{ value_json['SI7021'].Temperature }}"
+    unit_of_measurement: "°F"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "Sonoff3 Humidity"
+    state_topic: "tele/sonoff3/SENSOR"
+    value_template: "{{ value_json['SI7021'].Humidity }}"
+    unit_of_measurement: "%"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+ 
+# General
+
+  - platform: mqtt
+    name: "Sonoff3 Firmware Version"
+    state_topic: "stat/sonoff3/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+    
+  - platform: mqtt
+    name: "Sonoff3 Uptime"
+    state_topic: "tele/sonoff3/STATE"
+    value_template: "{{value_json['Uptime'] }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"    
+
+    
+  - platform: mqtt
+    name: "Sonoff3 Load Avg"
+    state_topic: "tele/sonoff3/STATE"
+    value_template: "{{value_json['LoadAvg'] }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+    
+# WiFi
+
+  - platform: mqtt
+    name: "Sonoff3 Hostname"
+    state_topic: "stat/sonoff3/STATUS5"
+    value_template: "{{value_json['StatusNET'].Hostname }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "Sonoff3 WiFi Signal Strength"
+    state_topic: "tele/sonoff3/STATE"
+    unit_of_measurement: "%"
+    value_template: "{{value_json['Wifi'].RSSI }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "Sonoff3 WiFi SSID"
+    state_topic: "tele/sonoff3/STATE"
+    value_template: "{{value_json['Wifi'].SSId }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "Sonoff3 WiFi BSSID"
+    state_topic: "tele/sonoff3/STATE"
+    value_template: "{{value_json['Wifi'].BSSId }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "Sonoff3 WiFi Channel"
+    state_topic: "tele/sonoff3/STATE"
+    value_template: "{{value_json['Wifi'].Channel }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+        
+  - platform: mqtt
+    name: "Sonoff3 WiFi Downtime"
+    state_topic: "tele/sonoff3/STATE"
+    value_template: "{{value_json['Wifi'].Downtime }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "Sonoff3 IP"
+    state_topic: 'stat/sonoff3/RESULT'
+    value_template: "{{ value_json.IPAddress1.split(' ')[1].replace('(','').replace(')','') }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+    
+  - platform: mqtt
+    name: "Sonoff3 MAC"
+    state_topic: "stat/sonoff3/STATUS5"
+    value_template: "{{value_json['StatusNET'].Mac }}"
+    availability_topic: "tele/sonoff3/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"    

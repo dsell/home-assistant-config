@@ -1,0 +1,13 @@
+   
+      
+#==================================
+
+title: Other
+icon: mdi:format-list-bulleted
+cards:
+  - type: 'custom:compact-custom-header'
+  
+  - type: shopping-list
+    title: ToDo List
+
+

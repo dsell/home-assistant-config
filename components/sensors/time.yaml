@@ -1,0 +1,36 @@
+    
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
+      
+  - platform: moon
+
+
+  - platform: template
+    sensors:
+      alarm_time:
+        friendly_name: 'Time'
+        value_template: '{{ "%0.02d:%0.02d" | format(states("input_number.alarmhours") | int, states("input_number.alarmminutes") | int) }}'
+
+
+  - platform: season
+    type: meteorological
+
+
+  - platform: template
+    sensors:
+      sunset:
+        value_template: '{% set timestamp = as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom("%I:%M") %} {{ timestamp.lstrip("0") }}'
+        unit_of_measurement: 'PM'
+
+
+  - platform: template
+    sensors:
+      sunrise:
+        value_template: '{% set timestamp = as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom("%I:%M") %} {{ timestamp.lstrip("0") }}'
+        unit_of_measurement: 'AM'

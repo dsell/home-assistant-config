@@ -1,0 +1,4 @@
+
+- platform: generic
+  still_image_url: 'https://icons.wxug.com/data/weather-maps/radar/united-states/des-moines-iowa-region-current-radar-animation.gif'
+  name: 'Radar Ames IA Current'

@@ -1,0 +1,3 @@
+  - platform: nws_alerts
+    zone_id: !secret nws_zones
+    

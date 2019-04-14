@@ -1,0 +1,37 @@
+   
+
+#- platform: cpuspeed
+
+
+
+#  - platform: speedtestdotnet
+#    server_id: !secret speedtest_server
+#    monitored_conditions:
+#      - download
+#      - ping
+#      - upload
+#    scan_interval:
+#      minutes: 30      
+
+  - platform: pi_hole
+    host: 192.168.1.210
+    monitored_conditions:
+      - ads_blocked_today
+      - dns_queries_today
+      - ads_percentage_today
+      - queries_cached
+
+  - platform: whois
+    name: sellfamily_us
+    #friendly_name: sellfamily.us
+    domain: sellfamily.us
+    
+  - platform: whois
+    name: sellfamily_org
+    #friendly_name: sellfamily.org
+    domain: sellfamily.org    
+    
+
+
+
+            

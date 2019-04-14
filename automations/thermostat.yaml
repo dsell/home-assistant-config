@@ -1,0 +1,23 @@
+
+
+- id: bedwarmer
+  alias: 'Warm bedroom up'
+  trigger:
+  - platform: time
+    at: "20:30"
+  action:
+  - service: climate.set_away_mode
+    data:
+      entity_id: climate.bedroom_thermostat
+      away_mode: "off"
+      
+- id: bedcooler
+  alias: 'Turn off bedroom heat'
+  trigger:
+  - platform: time
+    at: "08:30"
+  action:
+  - service: climate.set_away_mode
+    data: 
+      entity_id: climate.bedroom_thermostat
+      away_mode: "on"

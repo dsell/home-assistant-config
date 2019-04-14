@@ -1,0 +1,94 @@
+- alias: 'Set Timer'
+  trigger:
+    - platform: mqtt
+      topic: +/set_timer
+  action:
+    - service: script.reset_timer
+      data_template:
+        delay_seconds: >-
+          {%- set words = trigger.payload.split(' ') -%}
+          {%- for word in words -%}
+            {%- if word == 'second' or word == 'seconds' -%}
+              {%- set value = words[loop.index0|int-1] | int -%}
+              {%- if value | int -%}{{ value }}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        delay_minutes: >-
+          {%- set words = trigger.payload.split(' ') -%}
+          {%- for word in words -%}
+            {%- if word == 'minute' or word == 'minutes' -%}
+              {%- set value = words[loop.index0|int-1] | int -%}
+              {%- if value | int -%}{{ value }}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        delay_hours: >-
+          {%- set words = trigger.payload.split(' ') -%}
+          {%- for word in words -%}
+            {%- if word == 'hour' or word == 'hours' -%}
+              {%- set value = words[loop.index0|int-1] | int -%}
+              {%- if value | int -%}{{ value }}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+#        alarmtopic: >-
+#          zanzito/{{ trigger.topic.split('/')[-2] }}/alarm/play
+#    - service: mqtt.publish
+#      data_template:
+#        topic: >-
+#          zanzito/{{ trigger.topic.split('/')[-2] }}/notification
+#        payload: >-
+#          "OK. Timer set for {{trigger.payload}}"
+    - service: script.zanzito_say
+      data:
+        dest_id: "DennisPhone"
+        message: >-
+          "OK,  Timer set and started."
+#for {{ trigger.payload }}
+        
+- alias: 'Cancel Timer'
+  trigger:
+    - platform: mqtt
+      topic: +/cancel_timer
+    - platform: state
+      entity_id: input_boolean.timer_start
+      from: 'on'
+      to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+         entity_id: script.start_timer
+    - service: script.zanzito_say
+      data:
+        dest_id: "DennisPhone"
+        message: >-
+          "OK,  Timer canceled."       
+          
+- alias: 'Cancel Timer Alarm'
+  trigger:
+    - platform: mqtt
+      topic: +/timer_ack
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.zanzito_play_alarm
+        
+
+- alias: 'Alarm Timer Switch Activated'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.timer_start
+      from: 'off'
+      to: 'on'
+  action:
+    - service: script.zanzito_say
+      data:
+        dest_id: "DennisPhone"
+        message: >-
+          "OK,  Timer set and started."
+    - service: script.reset_timer
+      data_template:
+        delay_seconds: '{{ states("input_number.timerseconds") }}' 
+        delay_minutes: '{{ states("input_number.timerminutes") }}' 
+        delay_hours: '{{ states("input_number.timerhours") }}'

@@ -1,0 +1,27 @@
+- alias: Notification Alert On
+  trigger:
+  - platform: state
+    entity_id: input_boolean.notification_alert
+    from: 'off'
+    to: 'on'
+  action:
+    - service: mqtt.publish
+      data_template:
+        payload: '9'
+        topic: 'cmnd/D1mini1/Scheme'
+        qos: 1
+        retain: true
+        
+- alias: Notification Alert Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.notification_alert
+    from: 'on'
+    to: 'off'
+  action:
+    - service: mqtt.publish
+      data_template:
+        payload: '5'
+        topic: 'cmnd/D1mini1/Scheme'
+        qos: 1
+        retain: true

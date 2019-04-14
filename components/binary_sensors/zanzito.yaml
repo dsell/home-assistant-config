@@ -1,0 +1,7 @@
+
+- platform: mqtt
+  name: "Zanzito Alarm ack"
+  state_topic: "zanzito/DennisPhone/alarm"
+  payload_on: "ack"
+  payload_off: "1"
+  

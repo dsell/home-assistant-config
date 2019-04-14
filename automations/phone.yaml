@@ -1,0 +1,132 @@
+
+- alias: Phone mostly charged
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.phone_battery
+    above: '94'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Phone mostly charged"
+
+      
+- alias: Phone charging
+  trigger:
+  - platform: state
+    entity_id: sensor.phone_charging
+    from: 'False'
+    to: 'True'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Phone charging initiated"
+      
+- alias: Phone charging ended
+  trigger:
+  - platform: state
+    entity_id: sensor.phone_charging
+    from: 'True'
+    to: 'False'
+  condition: 
+    condition: numeric_state
+    entity_id: sensor.phone_battery
+    below: 100
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Phone no longer charging"
+
+- alias: Phone charged
+  trigger:
+  - platform: state
+    entity_id: sensor.phone_charging
+    from: 'True'
+    to: 'False'
+  condition: 
+    condition: numeric_state
+    entity_id: sensor.phone_battery
+    above: 99
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Phone charging complete"
+      
+- alias: Phone low
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.phone_battery
+    below: '50'
+  action:
+  - service: script.send_alert
+    data:
+      dest_id: "DennisPhone" 
+      message: "Warning!  Phone battery below 50% charge."
+  - service: persistent_notification.create
+    data:
+      message: "Phone Battery below 50%"
+      title: "Phone Low"
+      notification_id: phone_batt_low
+      
+- alias: Phone very low
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.phone_battery
+    below: '26'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Warning!  Phone battery below 25% charge."
+  - service: persistent_notification.create
+    data:
+      message: "Phone Battery below 25%"
+      title: "Phone Low"
+      notification_id: phone_batt_very_low
+      
+- alias: Phone photo switch goes on
+  trigger:
+  - platform: state
+    entity_id: input_boolean.zanzito_take_photo
+    from: 'off'
+    to: 'on'
+  action:
+  - service: script.zanzito_take_photo
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.zanzito_take_photo
+          
+- alias: Phone alarm switch goes on
+  trigger:
+  - platform: state
+    entity_id: input_boolean.zanzito_play_alarm
+    from: 'off'
+    to: 'on'
+  action:
+  - service: script.zanzito_play_alarm
+    data:
+      dest_id: 'DennisPhone'
+      message: ''
+      
+- alias: Phone alarm switch goes off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.zanzito_play_alarm
+    from: 'on'
+    to: 'off'
+  action:
+  - service: script.zanzito_stop_alarm
+    data:
+      dest_id: 'DennisPhone'      
+
+- alias: Phone Alarm ack
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.zanzito_alarm_ack
+    to: 'on'
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.zanzito_play_alarm
+    

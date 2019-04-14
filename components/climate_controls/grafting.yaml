@@ -1,0 +1,14 @@
+  - platform: generic_thermostat
+    name: Grafting Thermostat
+    heater: switch.sonoff3_power_state
+    target_sensor: sensor.sonoff3_temperature
+    min_temp: 40
+    max_temp: 100
+    min_cycle_duration: 
+      minutes: 5
+    initial_operation_mode: "off"
+    target_temp: 45
+    away_temp: 45
+    cold_tolerance: 0.5
+    hot_tolerance: 0.5
+    ac_mode: false

@@ -1,0 +1,10 @@
+
+  zanzito_play_alarm:
+    name: Phone Initiate Alarm
+    initial: off
+    icon: mdi:alarm-multiple
+
+  zanzito_take_photo:
+    name: Phone Trigger Photo
+    initial: off
+    icon: mdi:camera     

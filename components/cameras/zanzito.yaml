@@ -1,0 +1,9 @@
+
+- platform: mqtt
+  topic: zanzito/shared_pictures/DennisPhone
+  name: Phone Camera Shared
+  
+- platform: mqtt
+  topic: zanzito/DennisPhone/picture
+  name: Phone Dennis Camera
+  

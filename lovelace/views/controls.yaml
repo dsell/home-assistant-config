@@ -1,0 +1,69 @@
+
+
+title: Controls
+icon: mdi:toggle-switch
+columns: 5
+cards:
+  - type: 'custom:compact-custom-header'    
+
+#----------------------------------
+
+  - type: vertical-stack
+    cards:
+      - type: light
+        entity: light.light_1
+        name: Livingroom
+
+          
+#----------------------------------
+
+  - type: vertical-stack
+    cards:
+      - type: light
+        entity: light.led_1
+        name: Strip
+
+          
+#----------------------------------
+
+  - type: entities
+    title: Wake Up Alarm
+    show_header_toggle: false        
+    entities: 
+      - automation.wake_me_up
+      - sensor.alarm_time
+      - input_number.alarmhours
+      - input_number.alarmminutes
+      - input_boolean.alarmweekday
+      
+
+#---------------------------------
+      
+  - type: entities
+    title: Find My Phone
+    show_header_toggle: false
+    icon: mdi:motion-sensor
+    entities:      
+      - input_boolean.zanzito_play_alarm      
+      - input_boolean.zanzito_take_photo
+      - camera.phone_dennis_camera
+                
+#---------------------------------
+
+  - type: entities
+    title: Notification Alert
+    show_header_toggle: false
+    icon: notification
+    entities:
+      - input_boolean.notification_alert
+      
+#----------------------------------
+
+  - type: entities
+    title: Timer
+    show_header_toggle: false        
+    entities: 
+      - input_boolean.timer_start
+      - input_number.timerhours
+      - input_number.timerminutes
+      - input_number.timerseconds

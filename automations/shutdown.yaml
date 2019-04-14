@@ -1,0 +1,10 @@
+
+- alias: "Announce HA shutdown"
+  trigger:
+  - platform: homeassistant
+    event: shutdown
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Home automation system shutting down."    

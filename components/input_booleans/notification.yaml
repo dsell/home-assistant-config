@@ -1,0 +1,3 @@
+  notification_alert:
+    name: Notification
+    icon: mdi:alert

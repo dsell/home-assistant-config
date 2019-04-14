@@ -1,0 +1,18 @@
+
+#================================
+
+title: Radar
+#panel: true
+icon: mdi:radar
+cards:
+
+  - type: vertical-stack
+    cards:
+#      - type: 'custom:compact-custom-header'
+      - type: iframe
+        #title: Weather Radar
+        aspect_ratio: 38%
+        url: 'https://icons.wxug.com/data/weather-maps/radar/united-states/des-moines-iowa-region-current-radar-animation.gif'
+
+  
+

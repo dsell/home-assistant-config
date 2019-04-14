@@ -1,0 +1,205 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Dennis' Kingdom
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  # Customization file
+#  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+lovelace:
+  mode: yaml
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+#updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+custom_updater:
+
+# Enables a map showing the location of tracked devices
+#map:
+#  geo_location_sources:
+#    all
+#  default_zoom:
+#    3
+
+#anel_iframe:
+# - configurator:
+#   title: Configurator
+#   icon: mdi:wrench
+#   url: http://192.168.1.107:3218
+#  - sonweb: 
+#    title: TasmpAdmin
+#    icon: mdi:lightbulb-on
+#    url: http://192.168.1.107:9541
+  
+# Track the sun
+sun:
+
+# Allow diagnosing system problems
+system_health:
+
+shopping_list:
+
+octoprint:
+  host: !secret OCTOPRINT_HOST_IP
+  api_key: !secret OCTOPRINT_API_KEY
+  ssl: true
+  number_of_tools: 1
+  bed: true
+  
+mqtt:
+  broker: !secret MQTT_ip
+  port: 1883
+  client_id: home-assistant
+#  username: !secret MQTT_username
+#  password: !secret MQTT_password
+  discovery: true
+  discovery_prefix: homeassistant
+
+mqtt_statestream:
+  base_topic: homeassistant
+  publish_attributes: true
+  publish_timestamps: true  
+  
+namecheapdns:
+  domain: !secret MY_DOMAIN_NAME
+  password: !secret NAMECHEAP_DDNS_PW
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_key
+    mode: daily
+    units: us
+  
+# Input Numbers
+input_number:
+  alarmhours:
+    name: Hours
+    icon: mdi:timer
+    min: 0
+    max: 23
+    step: 1
+  alarmminutes:
+    name: Minutes
+    icon: mdi:timer
+    min: 0
+    max: 59
+    step: 5
+  timerseconds:
+    name: Seconds
+    min: 0
+    max: 59
+    step: 1
+    icon: mdi:timer
+  timerminutes:
+    name: Minutes
+    min: 0
+    max: 59
+    step: 1
+    icon: mdi:timer
+  timerhours:
+    name: Hours
+    min: 0
+    max: 23
+    step: 1
+    icon: mdi:timer
+  mediaseek:
+    name: seek
+    min: 0
+    max: 100
+
+input_select:
+  led_effect:
+    name: LED Effect
+    options:
+     - "Solid"
+     - "Christmas"
+     - "Candy Cane"
+     - "Holly Jolly"
+     - "Valentine"
+    initial: "Solid"
+  
+shell_command:
+  start_deace: start_deace.sh
+  stop_deace: stop_deace.sh
+  start_classical: start_classical.sh
+  start_bluegrass: start_bluegrass.sh
+  start_dawson: start_dawson.sh
+  start_gospel: start_gospel.sh
+  start_christmas: start_christmas.sh
+  start_sleep: start_sleep.sh
+  
+media_player:
+- platform: snapcast
+  host: 192.168.1.212
+- platform: mpd
+  host: 192.168.1.212
+  port: 6601
+  name: media_player_1
+- platform: mpd
+  host: 192.168.1.212
+  port: 6602
+  name: media_player_2
+- platform: mpd
+  host: 192.168.1.212
+  port: 6603
+  name: media_player_3
+  
+speedtestdotnet:
+  server_id: 
+    !secret speedtest_server
+  scan_interval:
+    minutes: 60
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+    
+camera: !include_dir_merge_list components/cameras
+climate: !include_dir_merge_list components/climate_controls
+input_boolean: !include_dir_merge_named components/input_booleans
+binary_sensor: !include_dir_merge_list components/binary_sensors
+switch: !include_dir_merge_list components/switches
+device_tracker: !include_dir_merge_list components/device_trackers
+sensor: !include_dir_merge_list components/sensors
+light: !include_dir_merge_list components/lights
+#group: !include groups.yaml
+automation: !include_dir_merge_list automations
+script: !include scripts.yaml

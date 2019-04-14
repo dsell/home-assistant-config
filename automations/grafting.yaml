@@ -1,0 +1,97 @@
+- alias: Grafting Humidity Low
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.sonoff3_humidity
+    below: '80'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Warning: Grafting humidity low!"
+  - service: persistent_notification.create
+    data:
+      message: "Warning: Grafting humidity low!"
+      title: "Grafting"
+      notification_id: "grafting_l_alert"      
+
+- alias: Grafting Humidity High
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.sonoff3_humidity
+    above: '90'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Warning: Grafting humidity high!"
+  - service: persistent_notification.create
+    data:
+      message: "Warning: Grafting humidity high!"
+      title: "Grafting"
+      notification_id: "grafting_h_alert"    
+      
+- alias: Grafting Humidity OK
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.sonoff3_humidity
+    above: '80'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Grafting humidity corrected."
+  - service: persistent_notification.create
+    data:
+      message: "Info: Grafting humidity corrected."
+      title: "Grafting"
+      notification_id: "grafting_alert" 
+      
+- alias: Grafting Temperature Low
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.sonoff3_temperature
+    below: '80'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Warning: Grafting temperature low!"
+  - service: persistent_notification.create
+    data:
+      message: "Warning: Grafting temperature low!"
+      title: "Grafting"
+      notification_id: "grafting_temp_l_alert"      
+    
+- alias: Grafting Temperature High
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.sonoff3_temperature
+    above: '82'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Warning: Grafting temperature high!"
+  - service: persistent_notification.create
+    data:
+      message: "Warning: Grafting temperature high!"
+      title: "Grafting"
+      notification_id: "grafting_temp_h_alert"      
+    
+        
+- alias: Grafting Temperature OK
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.sonoff3_temperature
+    above: '80'
+    below: '82'
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Grafting temperature corrected."
+  - service: persistent_notification.create
+    data:
+      message: "Info: Grafting temperature corrected"
+      title: "Grafting"
+      notification_id: "grafting_temp_ok_alert" 

@@ -1,0 +1,132 @@
+
+
+#====================================
+
+title: My House
+icon: mdi:home-outline
+
+cards:
+  - type: 'custom:compact-custom-header'
+    main_config: true
+    menu: show
+    options: clock
+    voice: show
+    clock_format: 12
+    
+#------------------------------
+
+  - type: weather-forecast
+    entity: weather.dark_sky
+    name: Weather
+
+#------------------------------
+
+  - type: vertical-stack
+    cards:
+    - type: entities
+      name: Ames Radar
+      entities:
+        - entity: camera.radar_ames_ia_current
+#    - type: picture
+#      title: Weather Radar
+#      tap_action: 
+#        action: navigate
+#        navigation_path: /lovelace/2/
+#      image: 'https://icons.wxug.com/data/weather-maps/radar/united-states/des-moines-iowa-region-current-radar-animation.gif'
+    
+    - type: entities
+      name: Weather Alerts
+      entities: 
+        - entity: sensor.nws_alerts
+          secondary_info: last-changed
+
+#------------------------------
+
+  - type: entities
+    name: Time
+    entities:
+      - entity: sensor.time_date
+      - entity: sensor.sunrise
+      - entity: sensor.sunset
+      - entity: sensor.moon
+      
+#------------------------------
+
+  - type: vertical-stack
+    cards:     
+    - type: custom:simple-thermostat
+      entity: climate.bedroom_thermostat
+      step_size: 1
+      sensors:
+        - entity: sensor.sonoff1_humidity
+          name: Humidity
+      hide:
+        away: false
+
+#------------------------------
+
+  - type: vertical-stack
+    cards:     
+    - type: custom:simple-thermostat
+      entity: climate.shop_thermostat
+      step_size: 1
+      sensors:
+        - entity: sensor.sonoff2_humidity
+          name: Humidity
+      hide:
+        away: false
+
+#------------------------------
+
+  - type: vertical-stack
+    cards:     
+    - type: custom:simple-thermostat
+      entity: climate.grafting_thermostat
+      step_size: 1
+      sensors:
+        - entity: sensor.sonoff3_humidity
+          name: Humidity
+      hide:
+        away: false
+
+#------------------------------        
+
+  - type: vertical-stack
+    cards:
+        
+      - type: gauge
+        name: Dennis' Phone Batt.
+        entity: sensor.phone_battery
+        severity:
+          red: 0
+          yellow: 25
+          green: 60
+    
+      - type: entities
+        entities:
+          - entity: sensor.phone_charging
+      
+#-------------------------------            
+              
+  - type: vertical-stack
+    cards:
+    - type: map
+      title: "Where is Dennis?"
+      entities:
+        - device_tracker.dennis_phone
+#        - device_tracker.laptop_tuxtop5
+      default_zoom:
+        13
+          
+                  
+    - type: entities
+      title: Tracking
+      show_header_toggle: false
+      entities:
+#        - entity:  device_tracker.phone_android
+#          secondary_info: last-changed
+        - entity: device_tracker.laptop_tuxtop5
+          secondary_info: last-changed
+        - entity: device_tracker.dennis_phone
+          secondary_info: last-changed
+           

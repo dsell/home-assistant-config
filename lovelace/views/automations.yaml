@@ -1,0 +1,41 @@
+
+
+title: Automations
+icon: mdi:settings-outline
+columns: 5
+cards:
+  - type: 'custom:compact-custom-header'    
+
+
+#----------------------------------
+
+
+  - type: vertical-stack
+    cards:
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations
+        show_header_toggle: false  
+      filter:
+        include:
+          - domain: automation
+            options:
+              secondary_info: last-changed
+  #          attributes:
+  #            source_type: router           
+  #          - automation.phone_low
+  #          - automation.phone_mostly_charged
+  #          - automation.phone_charged
+  #          - automation.nws_alert
+  #          - automation.nws_alert_expired
+  #          - automation.new_device_connected
+  #          - automation.shop_activity
+  #          - automation.shop_door_activity
+  #          - automation.grafting_humidity_low
+  #          - automation.warm_bedroom_up
+  #          - automation.turn_off_bedroom_heat
+  #          - automation.wake_me_up
+    - type: entities
+      entities:
+          - sensor.automation_count

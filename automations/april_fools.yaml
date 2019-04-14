@@ -1,0 +1,31 @@
+
+- alias: "April fools On"
+  trigger:
+    platform: sun
+    event: sunrise
+  condition:
+    condition: template
+    value_template: '{{ now().strftime("%m-%d") == "04-14" }}'
+  action:
+  - service: mqtt.publish
+    data_template:
+      payload: 'true'
+      topic: 'cmnd/D1mini1/SetOption16'
+      qos: 1
+      retain: true    
+      
+
+- alias: "April fools Off"
+  trigger:
+    platform: sun
+    event: sunrise
+  condition:
+    condition: template
+    value_template: '{{ now().strftime("%m-%d") == "04-15" }}'
+  action:
+  - service: mqtt.publish
+    data_template:
+      payload: 'false'
+      topic: 'cmnd/D1mini1/SetOption16'
+      qos: 1
+      retain: true

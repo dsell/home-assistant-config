@@ -1,0 +1,117 @@
+
+
+title: Dev
+icon: mdi:lead-pencil
+cards:
+  - type: 'custom:compact-custom-header'
+    
+  - type: entities
+    title: Restart
+    show_header_toggle: false        
+    entities: 
+      - script.restart
+      
+#----------------------------------
+
+  - type: entities
+    title: Stats
+    show_header_toggle: false
+    entities:
+      - sensor.sensor_count
+      - sensor.automation_count
+      - sensor.script_count
+      - sensor.switch_count
+      - sensor.binary_sensor_count
+      - sensor.lights_count
+      - sensor.tracker_count
+          
+#-------------------------------------
+
+  - type: custom:tracker-card
+  
+#----------------------------------
+
+  - type: entities
+    title: Development Web Page Links
+    
+    show_header_toggle: false
+    entities:
+      - type: weblink
+        name: Home Assistant
+        url: https://www.home-assistant.io/
+        icon: mdi:home-assistant
+      - type: weblink
+        name: Home Assistant Editor
+        url: http://192.168.1.107:8123/hassio/ingress/core_configurator
+        icon: mdi:home-assistant
+      - type: weblink
+        name: MDI Icons
+        url: https://materialdesignicons.com/
+        icon: mdi:home-assistant
+      - type: weblink
+        name: Awesome HA
+        url: https://www.awesome-ha.com/
+        icon: mdi:home-assistant 
+      - type: weblink
+        name: TasmoAdmin
+        url: http://192.168.1.107:9541
+        icon: mdi:home-assistant  
+      - type: weblink
+        name: Tasmota Wiki
+        url: https://github.com/arendst/Sonoff-Tasmota/wiki
+        icon: mdi:home-assistant
+
+#-----------------------------------
+
+  - type: entities
+    title: Internal Web Page Links
+    show_header_toggle: false
+    entities:
+      - type: weblink
+        name: Syncthing Big-Server
+        url: https://192.168.1.125:8384
+        icon: mdi:home  
+      - type: weblink
+        name: Syncthing Fileserver
+        url: https://192.168.1.205:8384
+        icon: mdi:home
+      - type: weblink
+        name: Syncthing Laptop
+        url: https://localhost:8080
+        icon: mdi:home
+      - type: weblink
+        name: OwnCloud
+        url: https://192.168.1.203/index.php/login
+        icon: mdi:home
+      - type: weblink
+        name: Proxmox
+        url: https://192.168.1.121:8006
+        icon: mdi:home       
+      - type: weblink
+        name: PiHole
+        url: http://192.168.1.210/admin
+        icon: mdi:home
+      - type: weblink
+        name: Router
+        url: http://192.168.1.1
+        icon: mdi:home    
+    
+#------------------------------------
+
+  - type: entities
+    title: Other Web Page Links
+    show_header_toggle: false
+    entities:
+      - type: weblink
+        name: YouTube Links
+        url: http://192.168.1.204/you.html
+      - type: weblink
+        name: Raw MQTT feed
+        url: http://192.168.1.204/rfeed.html
+      - type: weblink
+        name: Tree View of MQTT
+        url: http://192.168.1.204/tree.html
+      - type: weblink
+        name: Road Conditions
+        url: https://hb.511ia.org/#plowHome?layers=winterDriving%2CimagePlows%2ClocationPlows&timeFrame=TODAY
+
