@@ -10,18 +10,16 @@
     - condition: template
       value_template: '{{ trigger.from_state.state < 1 }}'
   action:
-  - service: script.zanzito_say
+  - service: script.notify_manager_set
     data_template:
-      dest_id: "DennisPhone" 
-      message: "The National Weather Service has issued one or more alerts.  {{ states.sensor.nws_alerts.attributes.spoken_desc }}"
-  - service: persistent_notification.create
-    data_template:
-      message: "{{ states.sensor.nws_alerts.attributes.display_desc }}"
-      title: "NWS warning(s) issued: {{ states.sensor.nws_alerts.attributes.title }}"
-      notification_id: nws_alert     
+      notify_dest: "DennisPhone" 
+      notify_say: "The National Weather Service has issued one or more alerts.  {{ states.sensor.nws_alerts.attributes.spoken_desc }}"
+      notify_display: "{{ states.sensor.nws_alerts.attributes.display_desc }}"
+      notify_title: "NWS warning(s) issued: {{ states.sensor.nws_alerts.attributes.title }}"
+      notify_id: nws_alert     
 
 
-- alias: NWS New Alert
+- alias: NWS Additional Alert
   trigger:
     platform: state
     entity_id: sensor.nws_alerts
@@ -33,18 +31,16 @@
       - condition: template
         value_template: '{{ trigger.from_state.state > 0 }}'
   action:
-  - service: script.zanzito_say
+  - service: script.notify_manager_set
     data_template:
-      dest_id: "DennisPhone" 
-      message: "The National Weather Service has issued one or more additional alerts.  {{ states.sensor.nws_alerts.attributes.spoken_desc }}"
-  - service: persistent_notification.create
-    data_template:
-      message: "{{ states.sensor.nws_alerts.attributes.display_desc }}"
-      title: "NWS warning(s) issued: {{ states.sensor.nws_alerts.attributes.title }}"
-      notification_id: nws_alert     
+      notify_dest: "DennisPhone" 
+      notify_say: "The National Weather Service has issued one or more additional alerts.  {{ states.sensor.nws_alerts.attributes.spoken_desc }}"
+      notify_display: "{{ states.sensor.nws_alerts.attributes.display_desc }}"
+      notify_title: "NWS warning(s) issued: {{ states.sensor.nws_alerts.attributes.title }}"
+      notify_id: nws_alert     
      
 
-- alias: NWS Alert Expired
+- alias: NWS Some Alerts Expired
   trigger:
     platform: state
     entity_id: sensor.nws_alerts
@@ -56,15 +52,13 @@
     - condition: template
       value_template: '{{ trigger.to_state.state > 0 }}'
   action:
-  - service: script.zanzito_say
+  - service: script.notify_manager_set
     data:
-      dest_id: "DennisPhone" 
-      message: "One or more National Weather Service alerts have expired."
-  - service: persistent_notification.create
-    data:
-      message: "Weather alert warnings expired."
-      title: "NWS"
-      notification_id: nws_alert   
+      notify_dest: "DennisPhone" 
+      notify_say: "One or more National Weather Service alerts have expired."
+      notify_display: "Weather alert warnings expired."
+      notify_title: "NWS"
+      notify_id: nws_alert   
 
       
 - alias: NWS All Alerts Expired
@@ -73,11 +67,9 @@
     entity_id: sensor.nws_alerts
     below: '1'
   action:
-  - service: script.zanzito_say
+  - service: script.notify_manager_clear
     data:
-      dest_id: "DennisPhone" 
-      message: "All National Weather Service alerts have expired."
-  - service: persistent_notification.dismiss
-    data:
-      notification_id: "nws_alert"      
+      notify_dest: "DennisPhone" 
+      notify_say: "All National Weather Service alerts have expired."
+      notify_id: "nws_alert"      
       

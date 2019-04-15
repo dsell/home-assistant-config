@@ -3,18 +3,24 @@
     - platform: mqtt
       topic: +/set_timer
   action:
-    - service: script.reset_timer
+    - service: input_number.set_value
       data_template:
-        delay_seconds: >-
+        entity_id: input_number.timerhours
+        value: >-
+          0
           {%- set words = trigger.payload.split(' ') -%}
           {%- for word in words -%}
-            {%- if word == 'second' or word == 'seconds' -%}
+            {%- if word == 'hour' or word == 'hours' -%}
               {%- set value = words[loop.index0|int-1] | int -%}
               {%- if value | int -%}{{ value }}
               {%- endif -%}
-            {%- endif -%}
+          {%- endif -%}
           {%- endfor -%}
-        delay_minutes: >-
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.timerminutes
+        value: >-
+          0
           {%- set words = trigger.payload.split(' ') -%}
           {%- for word in words -%}
             {%- if word == 'minute' or word == 'minutes' -%}
@@ -23,27 +29,23 @@
               {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
-        delay_hours: >-
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.timerseconds
+        value: >-
+          0
           {%- set words = trigger.payload.split(' ') -%}
           {%- for word in words -%}
-            {%- if word == 'hour' or word == 'hours' -%}
+            {%- if word == 'second' or word == 'seconds' -%}
               {%- set value = words[loop.index0|int-1] | int -%}
               {%- if value | int -%}{{ value }}
-              {%- endif -%}
+              {%- endif -%}              
             {%- endif -%}
           {%- endfor -%}
-#        alarmtopic: >-
-#          zanzito/{{ trigger.topic.split('/')[-2] }}/alarm/play
-#    - service: mqtt.publish
-#      data_template:
-#        topic: >-
-#          zanzito/{{ trigger.topic.split('/')[-2] }}/notification
-#        payload: >-
-#          "OK. Timer set for {{trigger.payload}}"
-    - service: script.zanzito_say
-      data:
-        dest_id: "DennisPhone"
-        message: 'OK,  Timer started for {{ states("input_number.timerhours") | int }} hours, {{ states("input_number.timerminutes") | int }} minutes, and {{ states("input_number.timerseconds") | int }} seconds.'
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.timer_start
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.timer_start
 
         
 - alias: 'Timer Cancel'
@@ -55,6 +57,9 @@
       from: 'on'
       to: 'off'
   action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.timer_start
     - service: script.turn_off
       data:
          entity_id: script.start_timer
@@ -85,7 +90,7 @@
       data_template:
         dest_id: "DennisPhone"
         message: >-
-          "OK,  Timer started for {{ states("input_number.timerhours") | int }} hours, {{ states("input_number.timerminutes") | int }} minutes, and {{ states("input_number.timerseconds") | int }} seconds."
+          OK,  Timer started for {% if (states("input_number.timerhours") | int) > 0 %} {{ states("input_number.timerhours") | int }} hours, {% endif %} {% if (states("input_number.timerminutes") | int) > 0 %} {{ states("input_number.timerminutes") | int }} minutes, {% endif %} {% if (states("input_number.timerseconds") | int) > 0 %} {{ states("input_number.timerseconds") | int }} seconds. {% endif %}
     - service: script.reset_timer
       data_template:
         delay_seconds: '{{ states("input_number.timerseconds") }}' 
