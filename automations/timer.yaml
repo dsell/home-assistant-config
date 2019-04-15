@@ -1,4 +1,4 @@
-- alias: 'Set Timer'
+- alias: 'Timer Set'
   trigger:
     - platform: mqtt
       topic: +/set_timer
@@ -43,11 +43,10 @@
     - service: script.zanzito_say
       data:
         dest_id: "DennisPhone"
-        message: >-
-          "OK,  Timer set and started."
-#for {{ trigger.payload }}
+        message: 'OK,  Timer started for {{ states("input_number.timerhours") | int }} hours, {{ states("input_number.timerminutes") | int }} minutes, and {{ states("input_number.timerseconds") | int }} seconds.'
+
         
-- alias: 'Cancel Timer'
+- alias: 'Timer Cancel'
   trigger:
     - platform: mqtt
       topic: +/cancel_timer
@@ -65,7 +64,7 @@
         message: >-
           "OK,  Timer canceled."       
           
-- alias: 'Cancel Timer Alarm'
+- alias: 'Timer Silence Alarm'
   trigger:
     - platform: mqtt
       topic: +/timer_ack
@@ -83,10 +82,10 @@
       to: 'on'
   action:
     - service: script.zanzito_say
-      data:
+      data_template:
         dest_id: "DennisPhone"
         message: >-
-          "OK,  Timer set and started."
+          "OK,  Timer started for {{ states("input_number.timerhours") | int }} hours, {{ states("input_number.timerminutes") | int }} minutes, and {{ states("input_number.timerseconds") | int }} seconds."
     - service: script.reset_timer
       data_template:
         delay_seconds: '{{ states("input_number.timerseconds") }}' 

@@ -5,7 +5,7 @@
     event: sunrise
   condition:
     condition: template
-    value_template: '{{ now().strftime("%m-%d") == "04-14" }}'
+    value_template: '{{ now().strftime("%m-%d") == "04-01" }}'
   action:
   - service: mqtt.publish
     data_template:
@@ -21,7 +21,7 @@
     event: sunrise
   condition:
     condition: template
-    value_template: '{{ now().strftime("%m-%d") == "04-15" }}'
+    value_template: '{{ now().strftime("%m-%d") == "04-02" }}'
   action:
   - service: mqtt.publish
     data_template:

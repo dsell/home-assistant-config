@@ -1,4 +1,4 @@
-  - alias: "Notify if HA Device Offline"
+  - alias: "Server Offline notification"
     trigger:
       - platform: state
         entity_id:
@@ -9,11 +9,11 @@
         to: 'not_home'
     action:
       - service: script.zanzito_say
-        data:
+        data_template:
           dest_id: "DennisPhone" 
           message: '{{ trigger.to_state.attributes.friendly_name }} is offline'
       - service: persistent_notification.create
-        data:
+        data_template:
           notification_id: device_offline_alert      
           title: "Home Assistant Device is Offline"
           message: '{{ trigger.to_state.attributes.friendly_name }} is offline'

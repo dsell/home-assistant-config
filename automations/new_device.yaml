@@ -12,12 +12,12 @@
 #        {{ not is_state('media_player.livingroomCC', 'playing') }}
 
     - service: script.zanzito_say
-      data:
+      data_template:
         dest_id: "DennisPhone" 
         message: 'There has been a new device detected on the network.  Be sure to appropriately catagorize {{trigger.event.data.host_name}} .'
     - service: persistent_notification.create
-      data:
-        message: "New device detected on the network!"
+      data_template:
+        message: "New device detected on the network!  {{trigger.event.data.host_name}}"
         title: "IP"
         notification_id: "ip_alert"        
 

@@ -138,7 +138,7 @@ start_timer:
         message: >-
           "Timer expired."
     - delay: 
-        seconds: 1
+        seconds: 2
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.zanzito_play_alarm

@@ -1,5 +1,5 @@
       
-- alias: Aurora Notification
+- alias: Aurora Visibility Notification 
   trigger:
   - platform: state
     entity_id: binary_sensor.aurora_visibility
@@ -7,14 +7,34 @@
     to: 'on'
   action:
   - service: script.zanzito_say
-    data:
+    data_template:
       dest_id: "DennisPhone" 
       message: >
-                There is currently a {{state_attr('binary_sensor.aurora_visibility', 'visibility_level')}} % chance of viewing auroras.  
+                There is currently a {{ states.binary_sensor.aurora_visibility.attributes.visibility_level }} % chance of viewing auroras.  
                 {{ "\n" }}
-                {{state_attr('binary_sensor.aurora_visibility', 'message')}}
+                {{ states.binary_sensor.aurora_visibility.attributes.message }}
   - service: persistent_notification.create
-    data:
-      message: "There is a possibility of aurora visibility currently!"
+    data_template:
+      message: >
+                There is currently a {{ states.binary_sensor.aurora_visibility.attributes.visibility_level }} % chance of viewing auroras.  
+                {{ "\n" }}
+                {{ states.binary_sensor.aurora_visibility.attributes.message }}
       title: "Aurora Alert"
+      notification_id: "aurora_alert" 
+      
+      
+- alias: Aurora Notification Expiration
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.aurora_visibility
+    from: 'on'
+    to: 'off'
+  action:
+  - service: script.zanzito_say
+    data_template:
+      dest_id: "DennisPhone" 
+      message: >
+                The chance of viewing auroras has passed.
+  - service: persistent_notification.dismiss
+    data:
       notification_id: "aurora_alert" 
