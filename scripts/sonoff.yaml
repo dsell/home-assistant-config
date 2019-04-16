@@ -1,0 +1,28 @@
+
+refresh_sonoffs:
+  alias: Refresh Sonoff Data
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: "sonoffs/cmnd/state"
+        payload: "" 
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER"
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER2"
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/POWER3"
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/state"
+        payload: ''
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/status"
+        payload: '0'
+    - service: mqtt.publish
+      data:
+        topic: "cmnd/sonoffs/ipaddress"

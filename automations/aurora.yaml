@@ -6,21 +6,19 @@
     from: 'off'
     to: 'on'
   action:
-  - service: script.zanzito_say
+  - service: script.notify_manager_set
     data_template:
-      dest_id: "DennisPhone" 
-      message: >
+      notify_dest: "DennisPhone" 
+      notify_say: >
                 There is currently a {{ states.binary_sensor.aurora_visibility.attributes.visibility_level }} % chance of viewing auroras.  
                 {{ "\n" }}
                 {{ states.binary_sensor.aurora_visibility.attributes.message }}
-  - service: persistent_notification.create
-    data_template:
-      message: >
+      notify_display: >
                 There is currently a {{ states.binary_sensor.aurora_visibility.attributes.visibility_level }} % chance of viewing auroras.  
                 {{ "\n" }}
                 {{ states.binary_sensor.aurora_visibility.attributes.message }}
-      title: "Aurora Alert"
-      notification_id: "aurora_alert" 
+      notify_title: "Aurora Alert"
+      notify_id: "aurora_alert" 
       
       
 - alias: Aurora Notification Expiration
@@ -30,11 +28,9 @@
     from: 'on'
     to: 'off'
   action:
-  - service: script.zanzito_say
+  - service: script.notify_manager_clear
     data_template:
-      dest_id: "DennisPhone" 
-      message: >
+      notify_dest: "DennisPhone" 
+      notify_display: >
                 The chance of viewing auroras has passed.
-  - service: persistent_notification.dismiss
-    data:
-      notification_id: "aurora_alert" 
+      notify_id: "aurora_alert" 

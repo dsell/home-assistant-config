@@ -1,0 +1,57 @@
+      
+refresh_phones:
+  alias: Refresh Phone Data
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: zanzito/DennisPhone/cmd/send_heartbeat      
+      
+zanzito_take_photo:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        payload: "true"
+        topic: zanzito/DennisPhone/cmd/take_picture
+        retain: false
+        
+zanzito_say:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        payload: '{{ message }}'
+        topic: 'zanzito/{{ dest_id }}/say'
+        qos: 1
+        retain: 0
+    - delay:
+        seconds: 1
+          
+
+zanzito_send_notification:
+  alias: Send notification to Zanzito
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: 'zanzito/{{ dest_id }}/notification'
+      payload: '{{ message }}'
+      qos: 1
+      retain: 0        
+
+zanzito_play_alarm:
+  alias: Play alarm on Zanzito device
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: 'zanzito/{{ dest_id }}/alarm/play'
+      payload: '{{ message }}'
+      qos: 1
+      retain: 0
+    
+zanzito_stop_alarm:
+  alias: Stop alarm on Zanzito device
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: 'zanzito/DennisPhone/alarm/stop'
+      payload: ''
+      qos: 1
+      retain: 0

@@ -1,0 +1,24 @@
+
+
+wakeup:
+  sequence:
+  - service: mqtt.publish
+    data_template:
+      payload: 'Good Morning Dennis.'
+      topic: 'zanzito/DennisPhone/say'
+      qos: 1
+      retain: 0
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.mpd
+      media_content_type: playlist
+      media_content_id: Classical
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.mpd
+      volume_level: 0.60
+  - service: media_player.shuffle_set
+    data:
+      entity_id: media_player.mpd
+      shuffle: true
+

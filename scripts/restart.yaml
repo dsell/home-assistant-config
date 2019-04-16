@@ -1,0 +1,6 @@
+          
+restart:
+  alias: Restart
+  sequence:
+  - data: {}
+    service: homeassistant.restart
