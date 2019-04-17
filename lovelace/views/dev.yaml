@@ -115,3 +115,11 @@ cards:
         name: Road Conditions
         url: https://hb.511ia.org/#plowHome?layers=winterDriving%2CimagePlows%2ClocationPlows&timeFrame=TODAY
 
+
+#--------------------------------------
+
+  - type: entities
+    title: Test Harness
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.test

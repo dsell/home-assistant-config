@@ -51,6 +51,14 @@ cards:
 #---------------------------------
 
   - type: entities
+    title: Dinner Bell
+    show_header_toggle: false
+    entities:
+      - input_boolean.dinner_bell
+      
+      #---------------------------------
+
+  - type: entities
     title: Notification Alert
     show_header_toggle: false
     icon: notification

@@ -5,14 +5,21 @@ say_time:
       data_template:
         message: >
           The time is now
-          {% if now().strftime("%H")|int > 12 %}
+          {% set minute = now().strftime("%M")|int %}
+          {% set hour = now().strftime("%H")|int %}
+          {% if hour > 12 %}
             {% set PM = true %}
-            {% set hour = now().strftime("%H")|int - 12 %}
-          {% else %}
-            {% set hour = now().strftime("%H")|int %}
+            {% set hour = hour - 12 %}
+          {% elif hour == 12 %}
+            {% if minute > 0 %}
+              {% set PM = true %}
+            {% endif %}
           {% endif %}
           {{ hour }} 
-          {{ now().strftime("%M") }}
+          {% if minute < 10 %}
+            Ohh
+          {% endif %}
+          {{ minute }}
           {% if PM == true %}
             Pee eMm
           {% else %}
