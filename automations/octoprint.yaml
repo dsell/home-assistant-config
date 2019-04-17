@@ -1,0 +1,16 @@
+
+- alias: "Octoprint Printing Error"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.octoprint_printing_error
+      from: "off"
+      to: "on"
+  action:
+    - service: script.notify_manager_set
+      data_template:
+        notify_dest: "DennisPhone" 
+        notify_say: 'Octoprint error detected!'
+        notify_display: "Octoprint printer error!"
+        notify_title: "Octoprint Alert"
+        notify__id: "octoprint_alert"
+        notify_level: 3

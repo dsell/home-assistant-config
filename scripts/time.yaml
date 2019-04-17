@@ -1,0 +1,21 @@
+say_time:
+  alias: Say Time
+  sequence:
+    - service: script.zanzito_say
+      data_template:
+        message: >
+          The time is now
+          {% if now().strftime("%H")|int > 12 %}
+            {% set PM = true %}
+            {% set hour = now().strftime("%H")|int - 12 %}
+          {% else %}
+            {% set hour = now().strftime("%H")|int %}
+          {% endif %}
+          {{ hour }} 
+          {{ now().strftime("%M") }}
+          {% if PM == true %}
+            Pee eMm
+          {% else %}
+            Aay eMm
+          {% endif %}
+        dest_id: DennisPhone

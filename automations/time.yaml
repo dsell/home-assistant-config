@@ -1,0 +1,6 @@
+- alias: 'Time'
+  trigger:
+    - platform: mqtt
+      topic: +/time
+  action:
+    - service: script.say_time

@@ -1,0 +1,54 @@
+
+- alias: Voice Clock
+  trigger:
+    - platform: time_pattern
+      hours: '*'
+      minutes: '0'
+    - platform: time_pattern
+      minutes: '15'
+    - platform: time_pattern
+      minutes: '30'
+    - platform: time_pattern
+      minutes: '45'
+  condition:
+    - condition: time
+      after: '09:29:00'
+      before: '21:30:00'
+    - condition: template
+      value_template: >
+        {% if is_state('media_player.livingroomCC', 'playing') %}
+          false
+        {% else %}
+          true
+        {% endif %}
+  action:
+    - service: script.zanzito_say
+      data_template:
+        message: >
+          The time is now
+          {% if now().strftime("%H")|int > 12 %}
+            {% set PM = true %}
+            {% set hour = now().strftime("%H")|int - 12 %}
+          {% else %}
+            {% set hour = now().strftime("%H")|int %}
+          {% endif %}
+          {% if now().strftime("%M")|int == 0 %}
+            {{ hour }} O'clock
+          {% elif now().strftime("%M")|int == 15 %}
+            a quarter after {{ hour }}
+          {% elif now().strftime("%M")|int == 30 %}
+            {{ hour }} thirty
+          {% elif now().strftime("%M")|int == 45 %}
+            {% set hour = hour + 1 %}
+            {% if hour > 12 %}
+              {% set hour = hour - 12 %}
+              {% set PM = true %}
+            {% endif %}
+            a quarter til {{ hour }}
+          {% endif %}
+          {% if PM == true %}
+            Pee eMm
+          {% else %}
+            Aay eMm
+          {% endif %}
+        dest_id: DennisPhone

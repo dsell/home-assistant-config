@@ -1,0 +1,27 @@
+- alias: 'MQTT Chit Chat - thank you'
+  trigger:
+    platform: mqtt
+    topic: +/chitchat
+    payload: "thankyou"
+  action:
+    service: script.zanzito_say
+    data_template:
+      dest_id: DennisPhone
+      message: >-
+        {% set responses = [
+        "You're welcome",
+        "You got it",
+        "Don't mention it",
+        "No worries",
+        "Not a problem",
+        "It's my pleasure",
+        "It was nothing",
+        "I'm happy to help",
+        "Not at all",
+        "Sure",
+        "That's okay",
+        "That's alright",
+        "Anytime"
+        ] %}
+        {% set rindex =  (range(0, (responses | length - 1) )|random) -%}
+        {{responses[rindex]}}

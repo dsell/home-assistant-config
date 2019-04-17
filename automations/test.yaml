@@ -1,0 +1,10 @@
+- alias: Test
+  trigger:
+  - platform: state
+    entity_id: input_boolean.test
+    from: 'off'
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.test
+    - service: script.say_time

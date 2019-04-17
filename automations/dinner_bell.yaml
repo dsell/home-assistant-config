@@ -1,0 +1,29 @@
+- alias: Dinner Bell On
+  trigger:
+  - platform: state
+    entity_id: input_boolean.dinner_bell
+    from: 'off'
+    to: 'on'
+  action:
+    - service: script.notify_manager_set
+      data_template:
+        notify_title:  Dinner Bell
+        notify_say: >
+                      Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 9 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  > 14 %} Dinner {% else %} Supper {% endif %}
+        notify_dest: DennisPhone
+        notify_display: >
+                      Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 9 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  > 14 %} Dinner {% else %} Supper {% endif %}
+        notify_id: dinner_bell
+        notify_level: 3
+        
+        
+- alias: Dinner Bell Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.dinner_bell
+    from: 'on'
+    to: 'off'
+  action:
+    - service: script.notify_manager_clear
+      data:
+        notify_id: dinner_bell
