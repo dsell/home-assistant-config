@@ -5,5 +5,5 @@ say_forcast:
       data_template:
         message: >
           The weather forcast for today is; 
-          {{ states.weather.dark_sky.attribute.forcast }}
+          {{ states.weather.dark_sky.forcast }}
         dest_id: DennisPhone

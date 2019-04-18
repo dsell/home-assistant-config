@@ -6,17 +6,17 @@ briefing:
       data:
         dest_id: DennisPhone
     - delay: 
-        seconds: 8
+        seconds: 6
     - service: script.say_date
       data:
         dest_in: DennisPhone
     - delay: 
-        seconds: 8
+        seconds: 6
     - service: script.say_forcast
       data:
         dest_in: DennisPhone
     - delay: 
-        seconds: 8
+        seconds: 6
     - service: script.say_rise_set
       data:
         dest_in: DennisPhone

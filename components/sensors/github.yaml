@@ -3,3 +3,5 @@
     repositories:
       - path: 'dsell/mqtt-monitor'
         name: MQTT-Monitor
+      - path: 'dsell/home-assistant-config'
+        name: Home Assistant Config
