@@ -32,7 +32,7 @@ cards:
 #----------------------------------
 
   - type: entities
-    title: Development Web Page Links
+    title: Development Links
     
     show_header_toggle: false
     entities:
@@ -64,13 +64,13 @@ cards:
 #-----------------------------------
 
   - type: entities
-    title: Internal Web Page Links
+    title: Internal Links
     show_header_toggle: false
     entities:
       - type: weblink
         name: Syncthing Big-Server
         url: https://192.168.1.125:8384
-        icon: mdi:home  
+        icon: mdi:home
       - type: weblink
         name: Syncthing Fileserver
         url: https://192.168.1.205:8384
@@ -78,6 +78,10 @@ cards:
       - type: weblink
         name: Syncthing Laptop
         url: https://localhost:8080
+        icon: mdi:home
+      - type: weblink
+        name: Octoprint
+        url: http://192.168.1.222
         icon: mdi:home
       - type: weblink
         name: OwnCloud
@@ -99,7 +103,7 @@ cards:
 #------------------------------------
 
   - type: entities
-    title: Other Web Page Links
+    title: Other Links
     show_header_toggle: false
     entities:
       - type: weblink

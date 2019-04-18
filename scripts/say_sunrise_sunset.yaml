@@ -4,9 +4,9 @@ say_rise_set:
     - service: script.zanzito_say
       data_template:
         message: >
-          The sun rose today at:
+          The sun rise today is:
           {{ states.sensor.sunrise.state }},
           
-          The sun sets today at;
+          The sun set today is;
           {{ states.sensor.sunset.state }}
         dest_id: DennisPhone

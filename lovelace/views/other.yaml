@@ -2,7 +2,7 @@
       
 #==================================
 
-title: Other
+title: To Do
 icon: mdi:format-list-bulleted
 cards:
   - type: 'custom:compact-custom-header'
