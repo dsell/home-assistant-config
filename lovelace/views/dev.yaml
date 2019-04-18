@@ -9,6 +9,8 @@ cards:
     title: Restart
     show_header_toggle: false        
     entities: 
+      - sensor.version_current
+      - sensor.version_available
       - script.restart
       
 #----------------------------------

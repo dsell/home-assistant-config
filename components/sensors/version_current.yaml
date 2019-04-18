@@ -4,5 +4,5 @@
 #
 # https://www.home-assistant.io/components/sensor.version/
 #
-platform: version
-name: version_current
+- platform: version
+  name: version_current

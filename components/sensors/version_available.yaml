@@ -4,7 +4,7 @@
 #
 # https://www.home-assistant.io/components/sensor.version/
 #
-platform: version
-name: version_available
-source: hassio
-image: qemux86-64
+- platform: version
+  name: version_available
+  source: hassio
+  image: qemux86-64
