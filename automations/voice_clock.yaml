@@ -46,9 +46,9 @@
             {% endif %}
             a quarter til {{ hour }}
           {% endif %}
-          {% if PM == true %}
-            Pee eMm
-          {% else %}
-            Aay eMm
-          {% endif %}
+#          {% if PM == true %}
+#            Pee eMm
+ #         {% else %}
+ #           Aay eMm
+ #         {% endif %}
         dest_id: DennisPhone
