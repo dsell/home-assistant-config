@@ -9,11 +9,7 @@
   condition:
     - condition: template
       value_template: >-
-        {{
-          states('sensor.version_available')
-          !=
-          states('sensor.version_current')
-        }}
+        {{ states('sensor.version_available') != states('sensor.version_current') }}
   action:
     - service: script.notify_manager_set
       data_template:
@@ -32,15 +28,11 @@
 - alias: system_upgrade_alert_expired
   trigger:
     platform: state
-    entity_id: sensor.version_available
+    entity_id: sensor.version_current
   condition:
     - condition: template
       value_template: >-
-        {{
-          states('sensor.version_available')
-          =
-          states('sensor.version_current')
-        }}
+        {{ states('sensor.version_available') == states('sensor.version_current') }}
   action:
     - service: script.notify_manager_clear
       data_template:
