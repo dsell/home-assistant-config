@@ -1,0 +1,9 @@
+say_forcast:
+  alias: Say Forcast
+  sequence:
+    - service: script.zanzito_say
+      data_template:
+        message: >
+          The weather forcast for today is; 
+          {{ states.weather.dark_sky.attribute.forcast }}
+        dest_id: DennisPhone

@@ -1,0 +1,12 @@
+say_rise_set:
+  alias: Say Sunrise Sunset
+  sequence:
+    - service: script.zanzito_say
+      data_template:
+        message: >
+          The sun rose today at:
+          {{ states.sensor.sunrise.state }},
+          
+          The sun sets today at;
+          {{ states.sensor.sunset.state }}
+        dest_id: DennisPhone
