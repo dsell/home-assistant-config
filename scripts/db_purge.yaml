@@ -1,0 +1,7 @@
+
+db_purge:
+  alias: Purge HA Database
+  sequence:
+    - service: recorder.purge
+      data:
+        keep_days: 1
