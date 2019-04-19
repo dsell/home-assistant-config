@@ -26,6 +26,9 @@ cards:
       - sensor.binary_sensor_count
       - sensor.lights_count
       - sensor.tracker_count
+      - sensor.home_assistant_log
+      - sensor.home_assistant_v2_db
+      - script.db_purge
           
 #-------------------------------------
 
