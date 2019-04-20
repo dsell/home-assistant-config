@@ -173,12 +173,12 @@ cards:
     title: "D1 Mini #2"
     show_header_toggle: false
     entities:
- #     - entity: light.led_2
- #       secondary_info: last-changed
+      - entity: binary_sensor.test_motion
+        secondary_info: last-changed
       - sensor.d1mini2_dimmer
       - sensor.d1mini2_color
       - sensor.d1mini2_scheme
-#      - switch.d1mini2_led_state
+      - switch.d1mini2_led_state
       - sensor.d1mini2_uptime
       - sensor.d1mini2_wifi_downtime
       - sensor.d1mini2_hostname

@@ -39,3 +39,9 @@ cards:
     - type: entities
       entities:
           - sensor.automation_count
+          
+  - type: entities
+    title: Settings
+    show_header_toggle: false
+    entities:
+      - input_boolean.sleep_mode

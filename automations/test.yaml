@@ -1,10 +1,11 @@
-- alias: Test
+- alias: 'Test'
   trigger:
-  - platform: state
-    entity_id: input_boolean.test
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: binary_sensor.test_motion
+      from: 'off'
+      to: 'on'
   action:
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.test
-    - service: script.briefing
+    - service: script.zanzito_say
+      data:
+        message: "I C U"
+        dest_id: DennisPhone

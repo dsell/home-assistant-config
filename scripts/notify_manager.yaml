@@ -18,10 +18,6 @@
 notify_manager_set:
   alias: Notify Manager Set
   sequence:
-    - service: script.zanzito_say
-      data_template:
-        dest_id: '{{ notify_dest }}'
-        message: '{{ notify_say }}'
     - service: persistent_notification.create
       data_template:
         message: '{{ notify_display }}'
@@ -29,7 +25,12 @@ notify_manager_set:
         notification_id: '{{ notify_id  }}' 
     - service: input_boolean.turn_on
       entity_id: input_boolean.notification_alert
-
+    - service: script.zanzito_say
+      data_template:
+        dest_id: '{{ notify_dest }}'
+        message: '{{ notify_say }}'
+        
+        
 notify_manager_clear:
   alias: Notify Manager Clear
   sequence:
