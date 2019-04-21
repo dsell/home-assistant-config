@@ -1,0 +1,7 @@
+  - platform: geo_rss_events
+    name: USGS All Earthquakes
+    url: https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.atom
+    categories:
+      - 'Past Hour'
+      - 'Past Day'
+    radius: 805
