@@ -14,6 +14,7 @@
     state_topic: "tele/sonoff1/SENSOR"
     value_template: "{{ value_json['AM2301'].Humidity }}"
     unit_of_measurement: "%"
+    device_class: humidity
     availability_topic: "tele/sonoff1/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"

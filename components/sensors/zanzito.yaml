@@ -10,6 +10,7 @@
   value_template: "{{ (value | float * 1.8 | float - 32) | round(2) }}"
   qos: 0
   unit_of_measurement: "F"
+  device_class: temperature
 
 - platform: mqtt
   name: "Phone Barometric Pressure"
@@ -17,12 +18,14 @@
   value_template: "{{ (value | float * 0.029529983071445) | round(2) }}"
   qos: 0
   unit_of_measurement: "in Hg"
+  device_class: pressure
   
 - platform: mqtt
   name: "Phone Humidity"
   state_topic: "zanzito/DennisPhone/shtc1_relative_humidity_sensor"
   qos: 0
   unit_of_measurement: "%"
+  device_class: humidity
   
 - platform: mqtt
   name: "Phone Steps"
