@@ -145,75 +145,75 @@ cards:
 #----------------------------------
       
   - type: entities
-    title: "D1 Mini #1"
+    title: "D1 mini #1"
     show_header_toggle: false
     entities:
       - entity: light.led_1
         secondary_info: last-changed
-      - sensor.d1mini1_dimmer
-      - sensor.d1mini1_color
-      - sensor.d1mini1_scheme
-      - switch.d1mini1_led_state
-      - sensor.d1mini1_uptime
-      - sensor.d1mini1_wifi_downtime
-      - sensor.d1mini1_hostname
-      - sensor.d1mini1_mac
-      - sensor.d1mini1_wifi_ssid
-      - sensor.d1mini1_wifi_bssid
-      - sensor.d1mini1_wifi_channel
-      - sensor.d1mini1_wifi_signal_strength
-      - sensor.d1mini1_load_avg
-      - sensor.d1mini1_firmware_version
-      - sensor.d1mini1_ip
+      - sensor.d1mini01_dimmer
+      - sensor.d1mini01_color
+      - sensor.d1mini01_scheme
+      - switch.d1mini01_led_state
+      - sensor.d1mini01_uptime
+      - sensor.d1mini01_wifi_downtime
+      - sensor.d1mini01_hostname
+      - sensor.d1mini01_mac
+      - sensor.d1mini01_wifi_ssid
+      - sensor.d1mini01_wifi_bssid
+      - sensor.d1mini01_wifi_channel
+      - sensor.d1mini01_wifi_signal_strength
+      - sensor.d1mini01_load_avg
+      - sensor.d1mini01_firmware_version
+      - sensor.d1mini01_ip
    
 
 #----------------------------------
       
   - type: entities
-    title: "D1 Mini #2"
+    title: "D1 mini0 #2"
     show_header_toggle: false
     entities:
       - entity: binary_sensor.test_motion
         secondary_info: last-changed
-      - sensor.d1mini2_dimmer
-      - sensor.d1mini2_color
-      - sensor.d1mini2_scheme
-      - switch.d1mini2_led_state
-      - sensor.d1mini2_uptime
-      - sensor.d1mini2_wifi_downtime
-      - sensor.d1mini2_hostname
-      - sensor.d1mini2_mac
-      - sensor.d1mini2_wifi_ssid
-      - sensor.d1mini2_wifi_bssid
-      - sensor.d1mini2_wifi_channel
-      - sensor.d1mini2_wifi_signal_strength
-      - sensor.d1mini2_load_avg
-      - sensor.d1mini2_firmware_version
-      - sensor.d1mini2_ip
+      - sensor.d1mini02_dimmer
+      - sensor.d1mini02_color
+      - sensor.d1mini02_scheme
+      - switch.d1mini02_led_state
+      - sensor.d1mini02_uptime
+      - sensor.d1mini02_wifi_downtime
+      - sensor.d1mini02_hostname
+      - sensor.d1mini02_mac
+      - sensor.d1mini02_wifi_ssid
+      - sensor.d1mini02_wifi_bssid
+      - sensor.d1mini02_wifi_channel
+      - sensor.d1mini02_wifi_signal_strength
+      - sensor.d1mini02_load_avg
+      - sensor.d1mini02_firmware_version
+      - sensor.d1mini02_ip
 
 #----------------------------------
       
   - type: entities
-    title: "D1 Mini #3"
+    title: "D1 mini0 #3"
     show_header_toggle: false
     entities:
 #      - entity: light.led_3
 #        secondary_info: last-changed
-      - sensor.d1mini3_dimmer
-      - sensor.d1mini3_color
-      - sensor.d1mini3_scheme
-#      - switch.d1mini3_led_state
-      - sensor.d1mini3_uptime
-      - sensor.d1mini3_wifi_downtime
-      - sensor.d1mini3_hostname
-      - sensor.d1mini3_mac
-      - sensor.d1mini3_wifi_ssid
-      - sensor.d1mini3_wifi_bssid
-      - sensor.d1mini3_wifi_channel
-      - sensor.d1mini3_wifi_signal_strength
-      - sensor.d1mini3_load_avg
-      - sensor.d1mini3_firmware_version
-      - sensor.d1mini3_ip
+      - sensor.d1mini03_dimmer
+      - sensor.d1mini03_color
+      - sensor.d1mini03_scheme
+#      - switch.d1mini03_led_state
+      - sensor.d1mini03_uptime
+      - sensor.d1mini03_wifi_downtime
+      - sensor.d1mini03_hostname
+      - sensor.d1mini03_mac
+      - sensor.d1mini03_wifi_ssid
+      - sensor.d1mini03_wifi_bssid
+      - sensor.d1mini03_wifi_channel
+      - sensor.d1mini03_wifi_signal_strength
+      - sensor.d1mini03_load_avg
+      - sensor.d1mini03_firmware_version
+      - sensor.d1mini03_ip
             
 #----------------------------------
  #--------------------------------------

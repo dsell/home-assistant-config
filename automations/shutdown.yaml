@@ -3,6 +3,9 @@
   trigger:
   - platform: homeassistant
     event: shutdown
+  - platform: event   
+    event_type: homeassistant.restart
+ 
   action:
   - service: script.zanzito_say
     data:

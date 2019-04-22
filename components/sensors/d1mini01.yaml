@@ -1,64 +1,64 @@
 # Specific
 
   - platform: mqtt
-    name: "D1mini4 Dimmer"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 Dimmer"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Dimmer'] }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline" 
 
   - platform: mqtt
-    name: "D1mini4 Color"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 Color"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Color'] }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline" 
 
   - platform: mqtt
-    name: "D1mini4 Scheme"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 Scheme"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Scheme'] }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline" 
 
 
   - platform: mqtt
-    name: "D1mini4 LED"
-    state_topic: "stat/D1mini4/RESULT"
+    name: "D1mini01 LED"
+    state_topic: "stat/D1mini01/RESULT"
     value_template: "{{value_json['LedPower'] }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline" 
 
 # General
 
   - platform: mqtt
-    name: "D1mini4 Firmware Version"
-    state_topic: "stat/D1mini4/STATUS2"
+    name: "D1mini01 Firmware Version"
+    state_topic: "stat/D1mini01/STATUS2"
     value_template: "{{value_json['StatusFWR'].Version }}"
     qos: 0
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     
     
   - platform: mqtt
-    name: "D1mini4 Uptime"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 Uptime"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Uptime'] }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"    
 
     
   - platform: mqtt
-    name: "D1mini4 Load Avg"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 Load Avg"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['LoadAvg'] }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     
@@ -66,67 +66,67 @@
 # WiFi
 
   - platform: mqtt
-    name: "D1mini4 Hostname"
-    state_topic: "stat/D1mini4/STATUS5"
+    name: "D1mini01 Hostname"
+    state_topic: "stat/D1mini01/STATUS5"
     value_template: "{{value_json['StatusNET'].Hostname }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     
   - platform: mqtt
-    name: "D1mini4 WiFi Signal Strength"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 WiFi Signal Strength"
+    state_topic: "tele/D1mini01/STATE"
     unit_of_measurement: "%"
     value_template: "{{value_json['Wifi'].RSSI }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
 
   - platform: mqtt
-    name: "D1mini4 WiFi SSID"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 WiFi SSID"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Wifi'].SSId }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     
   - platform: mqtt
-    name: "D1mini4 WiFi BSSID"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 WiFi BSSID"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Wifi'].BSSId }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
 
   - platform: mqtt
-    name: "D1mini4 WiFi Channel"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 WiFi Channel"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Wifi'].Channel }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
         
   - platform: mqtt
-    name: "D1mini4 WiFi Downtime"
-    state_topic: "tele/D1mini4/STATE"
+    name: "D1mini01 WiFi Downtime"
+    state_topic: "tele/D1mini01/STATE"
     value_template: "{{value_json['Wifi'].Downtime }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     
   - platform: mqtt
-    name: "D1mini4 IP"
-    state_topic: 'stat/D1mini4/RESULT'
+    name: "D1mini01 IP"
+    state_topic: 'stat/D1mini01/RESULT'
     value_template: "{{ value_json.IPAddress1.split(' ')[1].replace('(','').replace(')','') }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     
     
   - platform: mqtt
-    name: "D1mini4 MAC"
-    state_topic: "stat/D1mini4/STATUS5"
+    name: "D1mini01 MAC"
+    state_topic: "stat/D1mini01/STATUS5"
     value_template: "{{value_json['StatusNET'].Mac }}"
-    availability_topic: "tele/D1mini4/LWT"
+    availability_topic: "tele/D1mini01/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"    

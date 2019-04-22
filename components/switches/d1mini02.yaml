@@ -1,9 +1,9 @@
 - platform: mqtt
-  name: "D1mini2 LED State"
-  state_topic: "stat/D1mini2/RESULT"
+  name: "D1mini02 LED State"
+  state_topic: "stat/D1mini02/RESULT"
   value_template: "{{ value_json.LedPower }}"
-  command_topic: "cmnd/D1mini2/LedPower"
-  availability_topic: "tele/D1mini2/LWT"
+  command_topic: "cmnd/D1mini02/LedPower"
+  availability_topic: "tele/D1mini02/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
