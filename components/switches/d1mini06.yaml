@@ -1,5 +1,5 @@
 - platform: mqtt
-  name: "D6mini06 LED State"
+  name: "D1mini06 LED State"
   state_topic: "stat/D6mini06/RESULT"
   value_template: "{{ value_json.LedPower }}"
   command_topic: "cmnd/D6mini06/LedPower"
