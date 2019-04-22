@@ -4,7 +4,7 @@
   value_template: "{{ value_json.LedPower }}"
   command_topic: "cmnd/D3mini03/LedPower"
   availability_topic: "tele/D3mini03/LWT"
-  qos: 3
+  qos: 1
   payload_on: "ON"
   payload_off: "OFF"
   payload_available: "Online"
