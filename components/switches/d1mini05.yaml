@@ -1,0 +1,12 @@
+- platform: mqtt
+  name: "D5mini05 LED State"
+  state_topic: "stat/D5mini05/RESULT"
+  value_template: "{{ value_json.LedPower }}"
+  command_topic: "cmnd/D5mini05/LedPower"
+  availability_topic: "tele/D5mini05/LWT"
+  qos: 5
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
