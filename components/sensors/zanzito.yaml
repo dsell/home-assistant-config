@@ -6,8 +6,8 @@
     
 - platform: mqtt
   name: "Phone Temperature"
-  state_topic: "zanzito/DennisPhone/battery_level"
-  value_template: "{{ (value | float * 1.8 | float - 32) | round(2) }}"
+  state_topic: "zanzito/DennisPhone/shtc1_ambient_temperature_sensor"
+  value_template: "{{ (value | float * 1.8 | float + 32) | round(2) }}"
   qos: 0
   unit_of_measurement: "F"
   device_class: temperature
