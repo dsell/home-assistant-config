@@ -39,6 +39,12 @@
   qos: 0
 
 - platform: mqtt
+  name: "Phone Plugged In"
+  state_topic: "zanzito/DennisPhone/device_info"
+  value_template: '{{ value_json.charge_type }}'
+  qos: 0  
+  
+- platform: mqtt
   name: "Phone Charging"
   state_topic: "zanzito/DennisPhone/device_info"
   value_template: '{{ value_json.battery_charging }}'

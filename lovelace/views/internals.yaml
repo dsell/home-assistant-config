@@ -22,6 +22,7 @@ cards:
     
       - type: entities
         entities:
+          - entity: sensor.phone_plugged_in
           - entity: sensor.phone_charging
           - entity: sensor.phone_temperature
           - entity: sensor.phone_humidity
