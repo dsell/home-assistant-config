@@ -72,6 +72,7 @@ cards:
     show_header_toggle: false        
     entities: 
       - input_boolean.timer_start
+      - timer.user_timer
       - input_number.timerhours
       - input_number.timerminutes
       - input_number.timerseconds

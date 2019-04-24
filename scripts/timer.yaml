@@ -3,9 +3,9 @@ reset_timer:
   alias: "Reset Timer"
   sequence:
     # Cancel ev. old timers
-    - service: script.turn_off
+    - service: timer.cancel
       data:
-         entity_id: script.start_timer
+         entity_id: timer.user_timer
     # Set new timer
     - service: script.start_timer
       data_template:
@@ -15,22 +15,25 @@ reset_timer:
 start_timer:
   alias: "Start Timer"
   sequence:
-    - delay: '{{delay}}'
- #   - service: mqtt.publish
-#      data_template:
-#        topic: >-
-#          {{alarmtopic}}
-    - service: script.zanzito_say
-      data:
-        dest_id: "DennisPhone"
-        message: >-
-          "Timer expired."
-    - delay: 
-        seconds: 2
-    - service: input_boolean.turn_on
-      data:
-        entity_id: input_boolean.zanzito_play_alarm
-#    - service: input_boolean.turn_off
-#      data:
-#        entity_id: input_boolean.timer_start
-    
+     - service: timer.start
+       entity_id: timer.user_timer
+       data_template:
+         duration: '{{ delay }}'
+         
+remaining_timer:
+    sequence:
+      - service: script.zanzito_say
+        data_template: 
+          message: >
+            Time remaining 
+            {% set t = states.timer.user_timer.attributes.remaining.split(":") %}
+            {% if t[0] > 0 %}
+            {{ t[0] }} hours,
+            {% endif %}
+            {% if t[1] > 0 %}
+            {{ t[1] }} minutes,
+            {% endif %}
+            {% if t[2] > 0 %}
+            {{ t[2] }} seconds.
+            {% endif %}            
+          dest_id: DennisPhone

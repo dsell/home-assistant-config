@@ -5,7 +5,7 @@
       from: 'off'
       to: 'on'
   action:
-    - service: script.zanzito_say
+    - service: script.remaining_timer
       data:
         message: "I C U"
         dest_id: DennisPhone

@@ -47,6 +47,14 @@
     - service: input_boolean.turn_on
       entity_id: input_boolean.timer_start
 
+
+- alias: 'Timer Remaining'
+  trigger:
+    - platform: mqtt
+      topic: +/remaining_timer
+  action:
+    - service: script.remaining_timer
+        
         
 - alias: 'Timer Cancel'
   trigger:
@@ -56,19 +64,44 @@
       entity_id: input_boolean.timer_start
       from: 'on'
       to: 'off'
+  condition:
+    - condition: template
+      value_template: >-
+        {{ states('timer.user_timer') == "active" }}  
   action:
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.timer_start
-    - service: script.turn_off
+    - service: timer.cancel
       data:
-         entity_id: script.start_timer
+         entity_id: timer.user_timer
     - service: script.zanzito_say
       data:
         dest_id: "DennisPhone"
         message: >-
           "OK,  Timer canceled."       
           
+- alias: 'Timer Expired'
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.user_timer
+  action:
+    - service: script.zanzito_say
+      data:
+        dest_id: "DennisPhone"
+        message: >-
+         "Timer expired."
+    - delay: 
+        seconds: 2
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.zanzito_play_alarm
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.timer_start        
+        
 - alias: 'Timer Silence Alarm'
   trigger:
     - platform: mqtt

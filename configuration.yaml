@@ -91,7 +91,7 @@ system_health:
 shopping_list:
 
 timer:
-  test:
+  user_timer:
   
 octoprint:
   host: !secret OCTOPRINT_HOST_IP
