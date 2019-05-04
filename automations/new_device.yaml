@@ -14,8 +14,8 @@
     - service: script.notify_manager_set
       data_template:
         notify_dest: "DennisPhone" 
-        notify_say: 'There has been a new device detected on the network.  Be sure to appropriately catagorize {{trigger.event.data.host_name}} .'
-        notify_display: "New device detected on the network!  {{trigger.event.data.host_name}}"
+        notify_say: 'There has been a new device detected on the network.  Be sure to appropriately catagorize {{ trigger.event.data.host_name }} .'
+        notify_display: "New device detected on the network!  {{ trigger.event.data.host_name }} {{ trigger.event.data.ip }}"
         notify_title: "IP"
         notify_id: "ip_alert"        
 

@@ -6,7 +6,7 @@ cards:
   - type: 'custom:compact-custom-header'
     
   - type: entities
-    title: Restart
+    title: Home Assistant
     show_header_toggle: false        
     entities: 
       - sensor.version_current
@@ -73,37 +73,49 @@ cards:
     show_header_toggle: false
     entities:
       - type: weblink
+        name: Citadel
+        url: http://192.168.1.209
+        icon: mdi:email
+      - type: weblink
         name: Syncthing Big-Server
         url: https://192.168.1.125:8384
-        icon: mdi:home
+        icon: mdi:folder-sync
       - type: weblink
         name: Syncthing Fileserver
         url: https://192.168.1.205:8384
-        icon: mdi:home
+        icon: mdi:folder-sync
       - type: weblink
         name: Syncthing Laptop
         url: https://localhost:8080
-        icon: mdi:home
+        icon: mdi:folder-sync
       - type: weblink
         name: Octoprint
-        url: http://192.168.1.222
-        icon: mdi:home
+        url: http://192.168.1.114
+        icon: mdi:printer-3d
+      - type: weblink
+        name: MotionEye
+        url: http://192.168.1.207:8765
+        icon: mdi:cctv
       - type: weblink
         name: OwnCloud
         url: https://192.168.1.203/index.php/login
-        icon: mdi:home
+        icon: mdi:cloud
       - type: weblink
         name: Proxmox
         url: https://192.168.1.121:8006
-        icon: mdi:home       
+        icon: mdi:server
+      - type: weblink
+        name: Rhasspy
+        url: http://192.168.1.211:12101
+        icon: mdi:voice
       - type: weblink
         name: PiHole
         url: http://192.168.1.210/admin
-        icon: mdi:home
+        icon: mdi:pi-hole
       - type: weblink
         name: Router
         url: http://192.168.1.1
-        icon: mdi:home    
+        icon: mdi:router-wireless  
     
 #------------------------------------
 
