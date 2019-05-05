@@ -21,7 +21,7 @@
       notify_id: "aurora_alert" 
       
       
-- alias: Aurora Notification Expiration
+- alias: Notification Aurora Expiration
   trigger:
   - platform: state
     entity_id: binary_sensor.aurora_visibility

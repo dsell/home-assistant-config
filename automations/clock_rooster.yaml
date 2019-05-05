@@ -1,0 +1,22 @@
+
+- alias: Clock Rooster
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: script.amp_settings
+      data:
+        media_player: 'media_player.livingroomcc'
+        volume_level: 0.22
+
+    - service: media_player.play_media
+      data_template:
+        entity_id: >
+          {% if states.group.bed.state == 'off' %}
+          media_player.livingroomCC
+          {% else %}
+          media_player.alarm_clock, media_player.bedroom_alarm_panel
+          {% endif %}
+        media_content_id: >
+          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/rooster.wav
+        media_content_type: audio/mp4
