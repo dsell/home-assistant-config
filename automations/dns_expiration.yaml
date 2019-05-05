@@ -1,0 +1,21 @@
+
+- alias: "DNS Expiration Warning"
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.sellfamily_us
+    below: 30
+  - condition: numeric_state
+    entity_id: sensor.sellfamily_org
+    below: 30
+  action:
+  - service: script.notify_managet_set
+    data_template:
+      notify_display: ""
+      notify_dest: "DennisPhone" 
+      notify_say: ""
+      notify_title: "DNS Expiring"
+      notify_level: 1
+      notify_id: dns_alert
