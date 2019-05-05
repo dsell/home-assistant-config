@@ -23,7 +23,15 @@ cards:
         entity: light.led_1
         name: Strip
 
-          
+  - type: entities
+    title: "Fan"
+    show_header_toggle: false
+    entities:
+      - entity: switch.sonoff4_power_state
+        name: Living Room Fan
+        icon: mdi:fan
+      
+      
 #----------------------------------
 
   - type: entities

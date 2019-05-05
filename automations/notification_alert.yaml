@@ -1,4 +1,4 @@
-- alias: Notification Alert On
+- alias: Toggle Notification Alert On
   trigger:
   - platform: state
     entity_id: input_boolean.notification_alert
@@ -12,7 +12,7 @@
         qos: 1
         retain: true
         
-- alias: Notification Alert Off
+- alias: Toggle Notification Alert Off
   trigger:
   - platform: state
     entity_id: input_boolean.notification_alert

@@ -6,10 +6,10 @@
   condition:
   - condition: numeric_state
     entity_id: sensor.sellfamily_us
-    below: 30
+    below: 58
   - condition: numeric_state
     entity_id: sensor.sellfamily_org
-    below: 30
+    below: 58
   action:
   - service: script.notify_managet_set
     data_template:
