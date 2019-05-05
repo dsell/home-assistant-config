@@ -1,5 +1,5 @@
 
-- alias: Voice Clock
+- alias: Clock Voice
   trigger:
     - platform: time_pattern
       hours: '*'
