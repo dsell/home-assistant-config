@@ -1,4 +1,4 @@
-- alias: Briefing
+- alias: Intent Briefing
   trigger:
     - platform: mqtt
       topic: +/briefing
