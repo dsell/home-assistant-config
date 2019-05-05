@@ -3,5 +3,5 @@
     - !secret nmap_scan_range
   #    exclude:
   #      - 
-  home_interval: 300
-  consider_home: 700
+  home_interval: 5
+#  consider_home: 700

@@ -313,6 +313,71 @@ cards:
       - sensor.d1mini07_firmware_version
       - sensor.d1mini07_ip
             
+#----------------------------------
+      
+  - type: entities
+    title: "ESPxx #01"
+    show_header_toggle: false
+    entities:
+#      - entity: light.led_3
+#        secondary_info: last-changed
+      - sensor.espxx01_temperature
+      - sensor.espxx01_humidity
+      - switch.espxx01_led_state
+      - sensor.espxx01_uptime
+      - sensor.espxx01_wifi_downtime
+      - sensor.espxx01_hostname
+      - sensor.espxx01_mac
+      - sensor.espxx01_wifi_ssid
+      - sensor.espxx01_wifi_bssid
+      - sensor.espxx01_wifi_channel
+      - sensor.espxx01_wifi_signal_strength
+      - sensor.espxx01_load_avg
+      - sensor.espxx01_firmware_version
+      - sensor.espxx01_ip
+      
+#----------------------------------
+      
+  - type: entities
+    title: "ESPxx #02"
+    show_header_toggle: false
+    entities:
+#      - entity: light.led_3
+#        secondary_info: last-changed
+      - switch.espxx02_led_state
+      - sensor.espxx02_uptime
+      - sensor.espxx02_wifi_downtime
+      - sensor.espxx02_hostname
+      - sensor.espxx02_mac
+      - sensor.espxx02_wifi_ssid
+      - sensor.espxx02_wifi_bssid
+      - sensor.espxx02_wifi_channel
+      - sensor.espxx02_wifi_signal_strength
+      - sensor.espxx02_load_avg
+      - sensor.espxx02_firmware_version
+      - sensor.espxx02_ip
+      
+#----------------------------------
+      
+  - type: entities
+    title: "ESPxx #03"
+    show_header_toggle: false
+    entities:
+#      - entity: light.led_3
+#        secondary_info: last-changed
+      - entity: switch.espxx03_power_state
+      - switch.espxx03_led_state
+      - sensor.espxx03_uptime
+      - sensor.espxx03_wifi_downtime
+      - sensor.espxx03_hostname
+      - sensor.espxx03_mac
+      - sensor.espxx03_wifi_ssid
+      - sensor.espxx03_wifi_bssid
+      - sensor.espxx03_wifi_channel
+      - sensor.espxx03_wifi_signal_strength
+      - sensor.espxx03_load_avg
+      - sensor.espxx03_firmware_version
+      - sensor.espxx03_ip      
       
  #--------------------------------------
 

@@ -1,7 +1,8 @@
 - alias: Earthquake Detected
   trigger:
-    platform: state
+  - platform: numeric_state
     entity_id: sensor.usgs_all_earthquakes_past_hour
+    above: 0
   action:
   - service: script.notify_manager_set
     data_template:

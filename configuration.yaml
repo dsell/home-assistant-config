@@ -96,7 +96,7 @@ timer:
 octoprint:
   host: !secret OCTOPRINT_HOST_IP
   api_key: !secret OCTOPRINT_API_KEY
-  ssl: true
+  ssl: false
   number_of_tools: 1
   bed: true
   
