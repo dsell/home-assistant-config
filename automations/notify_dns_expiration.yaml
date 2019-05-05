@@ -1,5 +1,5 @@
 
-- alias: "DNS Expiration Warning"
+- alias: "Notification DNS Expiration Warning"
   trigger:
   - platform: sun
     event: sunrise

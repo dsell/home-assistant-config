@@ -1,4 +1,4 @@
-- alias: Dinner Bell On
+- alias: Notification Dinner Bell On
   trigger:
   - platform: state
     entity_id: input_boolean.dinner_bell
@@ -17,7 +17,7 @@
         notify_level: 3
         
         
-- alias: Dinner Bell Off
+- alias: Notification Dinner Bell Off
   trigger:
   - platform: state
     entity_id: input_boolean.dinner_bell

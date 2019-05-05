@@ -1,4 +1,4 @@
-- alias: NWS Alert Issued
+- alias: Notification NWS Alert Issued
   trigger:
     platform: state
     entity_id: sensor.nws_alerts
@@ -19,7 +19,7 @@
       notify_id: nws_alert     
 
 
-- alias: NWS Additional Alert
+- alias: Notification NWS Additional Alert
   trigger:
     platform: state
     entity_id: sensor.nws_alerts
@@ -40,7 +40,7 @@
       notify_id: nws_alert     
      
 
-- alias: NWS Some Alerts Expired
+- alias: Notification NWS Some Alerts Expired
   trigger:
     platform: state
     entity_id: sensor.nws_alerts
@@ -61,7 +61,7 @@
       notify_id: nws_alert   
 
       
-- alias: NWS All Alerts Expired
+- alias: Notification NWS All Alerts Expired
   trigger:
   - platform: numeric_state
     entity_id: sensor.nws_alerts

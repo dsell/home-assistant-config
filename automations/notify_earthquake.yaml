@@ -1,4 +1,4 @@
-- alias: Earthquake Detected
+- alias: Notification Earthquake Detected
   trigger:
   - platform: numeric_state
     entity_id: sensor.usgs_all_earthquakes_past_hour

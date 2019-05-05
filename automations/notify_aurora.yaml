@@ -1,5 +1,5 @@
       
-- alias: Aurora Visibility Notification 
+- alias: Notification Aurora Visibility
   trigger:
   - platform: state
     entity_id: binary_sensor.aurora_visibility

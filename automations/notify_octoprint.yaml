@@ -1,5 +1,5 @@
 
-- alias: "Octoprint Printing Error"
+- alias: "Notification Octoprint Printing Error"
   trigger:
     - platform: state
       entity_id: binary_sensor.octoprint_printing_error
