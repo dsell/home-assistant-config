@@ -1,0 +1,18 @@
+- alias: Notify Driveway Alarm
+  trigger:
+  - platform: state
+    entity_id: input_boolean.driveway_alarm
+    from: 'off'
+    to: 'on'
+  action:
+    - service: script.notify_manager_set
+      data_template:
+        notify_title:  Driveway Alert
+        notify_say: >
+                      A car is in the lane.
+        notify_dest: DennisPhone
+        notify_display: >
+                      A car is in the lane.
+        notify_id: driveway_alert
+        notify_level: 2
+        
