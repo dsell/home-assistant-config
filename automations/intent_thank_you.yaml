@@ -1,4 +1,4 @@
-- alias: 'MQTT Chit Chat - thank you'
+- alias: 'Intent Chit Chat - thank you'
   trigger:
     platform: mqtt
     topic: +/chitchat
