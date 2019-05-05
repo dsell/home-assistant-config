@@ -2,7 +2,7 @@
 # This alerts me on my iPhone when a new release
 # of Home Assistant for Hass.io is released.
 #
-- alias: system_upgrade_alert
+- alias: Notification New Version Available
   trigger:
     platform: state
     entity_id: sensor.version_available
@@ -25,7 +25,7 @@
         notify_level: 2
       
     
-- alias: system_upgrade_alert_expired
+- alias: Notification New Version Installed
   trigger:
     platform: state
     entity_id: sensor.version_current

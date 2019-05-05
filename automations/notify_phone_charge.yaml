@@ -1,5 +1,5 @@
 
-- alias: Notify Phone mostly charged
+- alias: Notification Phone mostly charged
   trigger:
   - platform: numeric_state
     entity_id: sensor.phone_battery
@@ -11,7 +11,7 @@
       message: "Phone mostly charged"
 
       
-- alias: Notify Phone charging
+- alias: Notification Phone charging
   trigger:
   - platform: state
     entity_id: sensor.phone_charging
@@ -23,7 +23,7 @@
       dest_id: "DennisPhone" 
       message: "Phone charging initiated"
       
-- alias: Notify Phone charging ended
+- alias: Notification Phone charging ended
   trigger:
   - platform: state
     entity_id: sensor.phone_charging
@@ -39,7 +39,7 @@
       dest_id: "DennisPhone" 
       message: "Phone no longer charging"
 
-- alias: Notify Phone charged
+- alias: Notification Phone charged
   trigger:
   - platform: state
     entity_id: sensor.phone_charging
@@ -55,7 +55,7 @@
       dest_id: "DennisPhone" 
       message: "Phone charging complete"
       
-- alias: Notify Phone low
+- alias: Notification Phone low
   trigger:
   - platform: numeric_state
     entity_id: sensor.phone_battery
@@ -71,7 +71,7 @@
       title: "Phone Low"
       notification_id: phone_batt_low
       
-- alias: Notify Phone very low
+- alias: Notification Phone very low
   trigger:
   - platform: numeric_state
     entity_id: sensor.phone_battery

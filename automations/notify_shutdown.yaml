@@ -1,5 +1,5 @@
 
-- alias: "Notify HA shutdown"
+- alias: "Notification HA shutdown"
   trigger:
   - platform: homeassistant
     event: shutdown

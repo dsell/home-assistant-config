@@ -1,5 +1,5 @@
      
-- alias: Shop Activity
+- alias: Security Shop Activity
   trigger:
   - platform: state
     entity_id: input_boolean.shop_motion
@@ -11,7 +11,7 @@
       dest_id: "DennisPhone" 
       message: "Shop motion detected."
       
-- alias: Shop Door Activity
+- alias: Security Shop Door Activity
   trigger:
   - platform: state
     entity_id: input_boolean.shop_door_motion

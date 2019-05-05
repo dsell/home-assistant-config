@@ -1,4 +1,4 @@
-- alias: Notify Driveway Alarm
+- alias: Notification Driveway Alarm
   trigger:
   - platform: state
     entity_id: input_boolean.driveway_alarm
