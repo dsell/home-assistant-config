@@ -1,5 +1,5 @@
 
-- alias: "HA Announce start-up"
+- alias: "Notify HA start-up"
   trigger:
   - platform: homeassistant
     event: start
