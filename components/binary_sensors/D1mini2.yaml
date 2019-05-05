@@ -1,0 +1,10 @@
+  - platform: mqtt
+    name: "Test Motion"
+    state_topic: "D1mini02/PIR/state"
+    availability_topic: "tele/D1mini02/LWT"
+    qos: 1
+    payload_on: "YES"
+    payload_off: "NO"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    device_class: motion
