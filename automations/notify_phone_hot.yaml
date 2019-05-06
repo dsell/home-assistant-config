@@ -1,0 +1,11 @@
+      
+- alias: Notification Phone hot
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.phone_temperature
+    above: 80
+  action:
+  - service: script.zanzito_say
+    data:
+      dest_id: "DennisPhone" 
+      message: "Phone is getting hot."
