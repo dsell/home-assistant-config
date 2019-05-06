@@ -1,0 +1,4 @@
+
+- platform: mqtt_json
+  devices:
+    dennis_truck06:  !secret APRS_TRUCK06
