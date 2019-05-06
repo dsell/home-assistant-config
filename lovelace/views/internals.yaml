@@ -319,11 +319,8 @@ cards:
     title: "ESPxx #01"
     show_header_toggle: false
     entities:
-#      - entity: light.led_3
-#        secondary_info: last-changed
       - sensor.espxx01_temperature
       - sensor.espxx01_humidity
-      - switch.espxx01_led_state
       - sensor.espxx01_uptime
       - sensor.espxx01_wifi_downtime
       - sensor.espxx01_hostname
