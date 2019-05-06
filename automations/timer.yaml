@@ -1,4 +1,4 @@
-- alias: 'Timer Set'
+- alias: 'Intent Timer Set'
   trigger:
     - platform: mqtt
       topic: +/set_timer
@@ -48,7 +48,7 @@
       entity_id: input_boolean.timer_start
 
 
-- alias: 'Timer Remaining'
+- alias: 'Intent Timer Remaining'
   trigger:
     - platform: mqtt
       topic: +/remaining_timer
@@ -56,7 +56,7 @@
     - service: script.remaining_timer
         
         
-- alias: 'Timer Cancel'
+- alias: 'Intent Timer Cancel'
   trigger:
     - platform: mqtt
       topic: +/cancel_timer
@@ -102,7 +102,7 @@
       data:
         entity_id: input_boolean.timer_start        
         
-- alias: 'Timer Silence Alarm'
+- alias: 'Intent Timer Silence Alarm'
   trigger:
     - platform: mqtt
       topic: +/timer_ack

@@ -1,4 +1,4 @@
-- alias: 'Time'
+- alias: 'Intent Time'
   trigger:
     - platform: mqtt
       topic: +/time
