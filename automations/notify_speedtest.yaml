@@ -1,0 +1,49 @@
+- alias: Notification Slow Pings
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.speedtest_ping
+    above: 15
+  action:
+  - service: script.notify_manager_set
+    data_template:
+      notify_dest: "DennisPhone" 
+      notify_say: "The internet ping times have risen to {{ states.sensor.speedtest_ping.state }} milliseconds."
+      notify_display: >
+                        "Internet ping times are {{ states.sensor.speedtest_ping.state }} ms."
+      notify_title: "Speedtest Slow Pings Detected"
+      notify_level: 1
+      notify_id: ping_alert     
+      
+      
+- alias: Notification Slow Downloads
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.speedtest_download
+    above: 15
+  action:
+  - service: script.notify_manager_set
+    data_template:
+      notify_dest: "DennisPhone" 
+      notify_say: "The internet download bandwidth is down to {{ states.sensor.speedtest_download.state }} MegaBits per seconds."
+      notify_display: >
+                        "Internet downlaod bandwidth is down to {{ states.sensor.speedtest_ping.state }} Mbit/s."
+      notify_title: "Speedtest Slow Download Bandwidth Detected"
+      notify_level: 1
+      notify_id: download_alert     
+      
+      
+- alias: Notification Slow Uploads
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.speedtest_upload
+    above: 15
+  action:
+  - service: script.notify_manager_set
+    data_template:
+      notify_dest: "DennisPhone" 
+      notify_say: "The internet upload bandwidth is down to {{ states.sensor.speedtest_upload.state }} MegaBits per second."
+      notify_display: >
+                        "Internet upload bandwidth is down to {{ states.sensor.speedtest_upload.state }} Mbit/s."
+      notify_title: "Speedtest Slow Upload Bandwidth Detected"
+      notify_level: 1
+      notify_id: upload_alert     
