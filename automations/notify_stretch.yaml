@@ -1,0 +1,11 @@
+
+- alias: Notification Stretch
+  trigger:
+    - platform: time_pattern
+      hours: '*'
+      minutes: '0'
+  action:
+    - service: script.zanzito_say
+      data_template:
+        message: >
+          Time to stretch.
