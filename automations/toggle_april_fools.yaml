@@ -1,5 +1,5 @@
 
-- alias: "April fools On"
+- alias: "Toggle April fools On"
   trigger:
     platform: sun
     event: sunrise
@@ -15,7 +15,7 @@
       retain: true    
       
 
-- alias: "April fools Off"
+- alias: "Toggle April fools Off"
   trigger:
     platform: sun
     event: sunrise

@@ -3,7 +3,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.phone_temperature
-    above: 88
+    above: 95
   action:
   - service: script.notify_manager_set
     data_template:
@@ -12,6 +12,6 @@
                         "Phone temperature has risen to {{ states.sensor.phone_temperature.state }} F."
       notify_level: 3
       notify_id: phonehot_alert  
-      notify_say: "Your phone is now {{ states.sensor.phone_temperature.state }} degrees farenheight."
+      notify_say: "Your phone is now {{ states.sensor.phone_temperature.state }} degrees fahrenheit."
       notify_title: "Phone Hot"
       

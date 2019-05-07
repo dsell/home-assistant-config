@@ -19,7 +19,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.speedtest_download
-    above: 15
+    below: 20
   action:
   - service: script.notify_manager_set
     data_template:
@@ -36,7 +36,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.speedtest_upload
-    above: 15
+    below: 20
   action:
   - service: script.notify_manager_set
     data_template:
