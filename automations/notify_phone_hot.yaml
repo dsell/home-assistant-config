@@ -3,9 +3,15 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.phone_temperature
-    above: 80
+    above: 88
   action:
-  - service: script.zanzito_say
-    data:
-      dest_id: "DennisPhone" 
-      message: "Phone is getting hot."
+  - service: script.notify_manager_set
+    data_template:
+      notify_dest: "DennisPhone" 
+      notify_display: >
+                        "Phone temperature has risen to {{ states.sensor.phone_temperature.state }} F."
+      notify_level: 3
+      notify_id: phonehot_alert  
+      notify_say: "Your phone is now {{ states.sensor.phone_temperature.state }} degrees farenheight."
+      notify_title: "Phone Hot"
+      
