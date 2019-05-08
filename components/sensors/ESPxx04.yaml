@@ -1,9 +1,22 @@
 # Specific
 
+
+    
   - platform: mqtt
-    name: "ESPxx04 LED"
-    state_topic: "stat/ESPxx04/RESULT"
-    value_template: "{{value_json['LedPower'] }}"
+    name: "ESPxx04 Temperature"
+    state_topic: "tele/ESPxx04/SENSOR"
+    value_template: "{{ value_json['DHT11'].Temperature }}"
+    unit_of_measurement: "°F"
+    availability_topic: "tele/ESPxx04/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "ESPxx04 Humidity"
+    state_topic: "tele/ESPxx04/SENSOR"
+    value_template: "{{ value_json['DHT11'].Humidity }}"
+    unit_of_measurement: "%"
+    device_class: humidity
     availability_topic: "tele/ESPxx04/LWT"
     payload_available: "Online"
     payload_not_available: "Offline" 

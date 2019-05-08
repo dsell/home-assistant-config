@@ -502,8 +502,9 @@ cards:
   #-----------------------------------
     
   - type: entities
-    title: Ping For Updated Sonoff Data
+    title: Ping For Infrequent Data
     show_header_toggle: false
     icon: mdi:sonar
     entities: 
       - script.refresh_sonoffs
+      
