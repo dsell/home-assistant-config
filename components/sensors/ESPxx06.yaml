@@ -1,0 +1,105 @@
+# Specific
+
+  - platform: mqtt
+    name: "ESPxx06 LED"
+    state_topic: "stat/ESPxx06/RESULT"
+    value_template: "{{value_json['LedPower'] }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline" 
+
+
+# General
+
+  - platform: mqtt
+    name: "ESPxx06 Firmware Version"
+    state_topic: "stat/ESPxx06/STATUS2"
+    value_template: "{{value_json['StatusFWR'].Version }}"
+    qos: 0
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "ESPxx06 Uptime"
+    state_topic: "tele/ESPxx06/STATE"
+    value_template: "{{value_json['Uptime'] }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"    
+
+  - platform: mqtt
+    name: "ESPxx06 Load Avg"
+    state_topic: "tele/ESPxx06/STATE"
+    value_template: "{{value_json['LoadAvg'] }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+    
+# WiFi
+
+  - platform: mqtt
+    name: "ESPxx06 Hostname"
+    state_topic: "stat/ESPxx06/STATUS5"
+    value_template: "{{value_json['StatusNET'].Hostname }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "ESPxx06 WiFi Signal Strength"
+    state_topic: "tele/ESPxx06/STATE"
+    unit_of_measurement: "%"
+    value_template: "{{value_json['Wifi'].RSSI }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "ESPxx06 WiFi SSID"
+    state_topic: "tele/ESPxx06/STATE"
+    value_template: "{{value_json['Wifi'].SSId }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "ESPxx06 WiFi BSSID"
+    state_topic: "tele/ESPxx06/STATE"
+    value_template: "{{value_json['Wifi'].BSSId }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+
+  - platform: mqtt
+    name: "ESPxx06 WiFi Channel"
+    state_topic: "tele/ESPxx06/STATE"
+    value_template: "{{value_json['Wifi'].Channel }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+        
+  - platform: mqtt
+    name: "ESPxx06 WiFi Downtime"
+    state_topic: "tele/ESPxx06/STATE"
+    value_template: "{{value_json['Wifi'].Downtime }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "ESPxx06 IP"
+    state_topic: 'stat/ESPxx06/RESULT'
+    value_template: "{{ value_json.IPAddress1.split(' ')[1].replace('(','').replace(')','') }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    
+  - platform: mqtt
+    name: "ESPxx06 MAC"
+    state_topic: "stat/ESPxx06/STATUS5"
+    value_template: "{{value_json['StatusNET'].Mac }}"
+    availability_topic: "tele/ESPxx06/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"    
