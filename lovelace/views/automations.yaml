@@ -22,20 +22,6 @@ cards:
           - domain: automation
             options:
               secondary_info: last-changed
-  #          attributes:
-  #            source_type: router           
-  #          - automation.phone_low
-  #          - automation.phone_mostly_charged
-  #          - automation.phone_charged
-  #          - automation.nws_alert
-  #          - automation.nws_alert_expired
-  #          - automation.new_device_connected
-  #          - automation.shop_activity
-  #          - automation.shop_door_activity
-  #          - automation.grafting_humidity_low
-  #          - automation.warm_bedroom_up
-  #          - automation.turn_off_bedroom_heat
-  #          - automation.wake_me_up
     - type: entities
       entities:
           - sensor.automation_count
@@ -45,3 +31,11 @@ cards:
     show_header_toggle: false
     entities:
       - input_boolean.sleep_mode
+      - input_boolean.guest_mode
+      - input_boolean.vacation_mode
+      
+  - type: entities
+    title: Scripts
+    show_header_toggle: false
+    entities:
+      - entity: group.all_scripts

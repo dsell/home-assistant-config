@@ -206,6 +206,6 @@ switch: !include_dir_merge_list components/switches
 device_tracker: !include_dir_merge_list components/device_trackers
 sensor: !include_dir_merge_list components/sensors
 light: !include_dir_merge_list components/lights
-#group: !include groups.yaml
+group: !include_dir_merge_list components/groups/notify_orbs.yaml
 automation: !include_dir_merge_list automations
 script: !include_dir_merge_named scripts

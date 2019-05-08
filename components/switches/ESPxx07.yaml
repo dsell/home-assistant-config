@@ -1,0 +1,26 @@
+- platform: mqtt
+  name: "ESPxx07 Power State"
+  state_topic: "stat/ESPxx07/POWER"
+#  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/ESPxx07/POWER"
+  availability_topic: "tele/ESPxx07/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+  
+  
+- platform: mqtt
+  name: "ESPxx07 LED State"
+  state_topic: "stat/ESPxx07/RESULT"
+  value_template: "{{ value_json.LedPower }}"
+  command_topic: "cmnd/ESPxx07/LedPower"
+  availability_topic: "tele/ESPxx07/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false

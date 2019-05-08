@@ -1,9 +1,12 @@
-  - alias: "Server Offline notification"
+  - alias: "Notification Server Offline"
     trigger:
       - platform: state
         entity_id:
           - device_tracker.big_fileserver
-          - device_tracker.phone_android
+          - device_tracker.fileserver
+          - device_tracker.gateway
+          - device_tracker.mqtt_broker
+#          - device_tracker.phone_android
           #....
         from: 'home'
         to: 'not_home'

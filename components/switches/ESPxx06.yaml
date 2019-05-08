@@ -1,9 +1,9 @@
 - platform: mqtt
-  name: "ESPxx03 Power State"
-  state_topic: "stat/ESPxx03/POWER"
+  name: "ESPxx06 Power State"
+  state_topic: "stat/ESPxx06/POWER"
 #  value_template: "{{ value_json.POWER }}"
-  command_topic: "cmnd/ESPxx03/POWER"
-  availability_topic: "tele/ESPxx03/LWT"
+  command_topic: "cmnd/ESPxx06/POWER"
+  availability_topic: "tele/ESPxx06/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
@@ -13,11 +13,11 @@
   
   
 - platform: mqtt
-  name: "ESPxx03 LED State"
-  state_topic: "stat/ESPxx03/RESULT"
+  name: "ESPxx06 LED State"
+  state_topic: "stat/ESPxx06/RESULT"
   value_template: "{{ value_json.LedPower }}"
-  command_topic: "cmnd/ESPxx03/LedPower"
-  availability_topic: "tele/ESPxx03/LWT"
+  command_topic: "cmnd/ESPxx06/LedPower"
+  availability_topic: "tele/ESPxx06/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"

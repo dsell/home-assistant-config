@@ -339,9 +339,8 @@ cards:
     title: "ESPxx #02"
     show_header_toggle: false
     entities:
-#      - entity: light.led_3
-#        secondary_info: last-changed
-      - switch.espxx02_led_state
+      - sensor.espxx02_temperature
+      - sensor.espxx02_humidity
       - sensor.espxx02_uptime
       - sensor.espxx02_wifi_downtime
       - sensor.espxx02_hostname
@@ -360,10 +359,8 @@ cards:
     title: "ESPxx #03"
     show_header_toggle: false
     entities:
-#      - entity: light.led_3
-#        secondary_info: last-changed
-      - entity: switch.espxx03_power_state
-      - switch.espxx03_led_state
+      - sensor.espxx03_temperature
+      - sensor.espxx03_humidity
       - sensor.espxx03_uptime
       - sensor.espxx03_wifi_downtime
       - sensor.espxx03_hostname
@@ -375,6 +372,104 @@ cards:
       - sensor.espxx03_load_avg
       - sensor.espxx03_firmware_version
       - sensor.espxx03_ip      
+      
+      #----------------------------------
+      
+  - type: entities
+    title: "ESPxx #04"
+    show_header_toggle: false
+    entities:
+      - sensor.espxx04_temperature
+      - sensor.espxx04_humidity
+      - sensor.espxx04_uptime
+      - sensor.espxx04_wifi_downtime
+      - sensor.espxx04_hostname
+      - sensor.espxx04_mac
+      - sensor.espxx04_wifi_ssid
+      - sensor.espxx04_wifi_bssid
+      - sensor.espxx04_wifi_channel
+      - sensor.espxx04_wifi_signal_strength
+      - sensor.espxx04_load_avg
+      - sensor.espxx04_firmware_version
+      - sensor.espxx04_ip      
+      
+#----------------------------------
+      
+  - type: entities
+    title: "ESPxx #05"
+    show_header_toggle: false
+    entities:
+      - switch.espxx05_power_state
+      - switch.espxx05_led_state
+      - sensor.espxx05_uptime
+      - sensor.espxx05_wifi_downtime
+      - sensor.espxx05_hostname
+      - sensor.espxx05_mac
+      - sensor.espxx05_wifi_ssid
+      - sensor.espxx05_wifi_bssid
+      - sensor.espxx05_wifi_channel
+      - sensor.espxx05_wifi_signal_strength
+      - sensor.espxx05_load_avg
+      - sensor.espxx05_firmware_version
+      - sensor.espxx05_ip      
+      
+#----------------------------------
+      
+  - type: entities
+    title: "ESPxx #06"
+    show_header_toggle: false
+    entities:
+      - switch.espxx06_power_state
+      - switch.espxx06_led_state
+      - sensor.espxx06_uptime
+      - sensor.espxx06_wifi_downtime
+      - sensor.espxx06_hostname
+      - sensor.espxx06_mac
+      - sensor.espxx06_wifi_ssid
+      - sensor.espxx06_wifi_bssid
+      - sensor.espxx06_wifi_channel
+      - sensor.espxx06_wifi_signal_strength
+      - sensor.espxx06_load_avg
+      - sensor.espxx06_firmware_version
+      - sensor.espxx06_ip      
+      
+#----------------------------------
+      
+  - type: entities
+    title: "ESPxx #07"
+    show_header_toggle: false
+    entities:
+      - switch.espxx07_power_state
+      - switch.espxx07_led_state
+      - sensor.espxx07_uptime
+      - sensor.espxx07_wifi_downtime
+      - sensor.espxx07_hostname
+      - sensor.espxx07_mac
+      - sensor.espxx07_wifi_ssid
+      - sensor.espxx07_wifi_bssid
+      - sensor.espxx07_wifi_channel
+      - sensor.espxx07_wifi_signal_strength
+      - sensor.espxx07_load_avg
+      - sensor.espxx07_firmware_version
+      - sensor.espxx07_ip  
+      
+#----------------------------------
+      
+  - type: entities
+    title: "ESPxx #08"
+    show_header_toggle: false
+    entities:
+      - sensor.espxx08_uptime
+      - sensor.espxx08_wifi_downtime
+      - sensor.espxx08_hostname
+      - sensor.espxx08_mac
+      - sensor.espxx08_wifi_ssid
+      - sensor.espxx08_wifi_bssid
+      - sensor.espxx08_wifi_channel
+      - sensor.espxx08_wifi_signal_strength
+      - sensor.espxx08_load_avg
+      - sensor.espxx08_firmware_version
+      - sensor.espxx08_ip      
       
  #--------------------------------------
 
