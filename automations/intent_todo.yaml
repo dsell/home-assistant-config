@@ -1,0 +1,38 @@
+- alias: 'Intent ToDo Say'  # not yet supported in HA
+  trigger:
+    platform: mqtt
+    topic: +/todosay
+  action:
+    service: script.zanzito_say
+    data_template:
+      dest_id: DennisPhone
+      message: >-
+        "The To Do List is unavailable"
+
+- alias: 'Intent ToDo Add'
+  trigger:
+    platform: mqtt
+    topic: +/todoadd
+  action:
+    - service: shopping_list.add_item 
+      data_template:
+        name: "{{ trigger.payload }}"
+    - service: script.zanzito_say
+      data_template:
+        dest_id: DennisPhone
+        message: >-
+          "{{ trigger.payload }} added to the To Do list."
+
+- alias: 'Intent ToDo Complete'  # may be of dubioud value due to inaccurate matching
+  trigger:
+    platform: mqtt
+    topic: +/todocomplete
+  action:
+    - service: shopping_list.complete_item 
+      data_template:
+        name: "{{ trigger.payload }}"
+    - service: script.zanzito_say
+      data_template:
+        dest_id: DennisPhone
+        message: >-
+          "{{ trigger.payload }} in the To Do list marked as completed."  
