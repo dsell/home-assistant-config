@@ -11,16 +11,15 @@
     - platform: time_pattern
       minutes: '45'
   condition:
-    - condition: time
-      after: '09:29:00'
-      before: '21:30:00'
-    - condition: template
-      value_template: >
-        {% if is_state('media_player.livingroomCC', 'playing') %}
-          false
-        {% else %}
-          true
-        {% endif %}
+    - condition: state
+      entity_id: 'input_boolean.sleep_mode'
+      state: 'off'
+    - condition: state
+      entity_id: 'input_boolean.mute_mode'
+      state: 'off'    
+    - condition: state
+      entity_id: 'input_boolean.theater_mode'
+      state: 'off'     
   action:
     - service: script.zanzito_say
       data_template:

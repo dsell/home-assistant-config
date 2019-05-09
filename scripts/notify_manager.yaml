@@ -7,8 +7,9 @@
 # notify_say      [Text to verbally say for notification.]
 # notify_display  [Text for notification]
 # notify_dest     [Audio destinations]
-# notify_level 0 - informational  [Low level items that can easily be masked to ignored.  Turned off when sleeping.]
-#              1 - warning        [warnings of low significance.  Things such as low battery warnings.]
+# notify_persist  [The notification persists for later reading/hearing if true]
+# notify_level 0 - informational  [Low level items that can easily be masked to ignored.  Turned off when sleeping.  No alert state.]
+#              1 - warning        [warnings of low significance.  Things such as low battery warnings.  Turned off when sleeping.  Alert state on.]
 #              2 - alert          [important notifications such as weather alerts/wake alarm.  Items that might be delayed for some time but not ignored.]
 #              3 - alarm          [Emergency notifications such as fire/smoke/flood/radiation not maskable.]
 #

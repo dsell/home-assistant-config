@@ -31,6 +31,8 @@ cards:
     show_header_toggle: false
     entities:
       - input_boolean.sleep_mode
+      - input_boolean.mute_mode
+      - input_boolean.theater_mode
       - input_boolean.guest_mode
       - input_boolean.vacation_mode
       
@@ -39,3 +41,5 @@ cards:
     show_header_toggle: false
     entities:
       - entity: group.all_scripts
+      
+      
