@@ -11,7 +11,7 @@
       value_template: >-
         {{ states('sensor.version_available') != states('sensor.version_current') }}
   action:
-    - service: script.notify_manager_set
+    - service: script.notify
       data_template:
         notify_title: Upgrade time!
         notify_say: >-
@@ -34,6 +34,6 @@
       value_template: >-
         {{ states('sensor.version_available') == states('sensor.version_current') }}
   action:
-    - service: script.notify_manager_clear
+    - service: script.notify_clear
       data_template:
         notify_id: hassio_upgrade

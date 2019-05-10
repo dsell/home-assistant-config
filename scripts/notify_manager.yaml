@@ -17,7 +17,7 @@
 
 
 notify_manager_set:
-  alias: Notify Manager Set
+  alias: Notify
   sequence:
     - service: persistent_notification.create
       data_template:
@@ -33,7 +33,7 @@ notify_manager_set:
         
         
 notify_manager_clear:
-  alias: Notify Manager Clear
+  alias: Notify Clear
   sequence:
     - service: script.zanzito_say
       data_template:

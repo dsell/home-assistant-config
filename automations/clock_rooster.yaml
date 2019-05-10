@@ -4,19 +4,14 @@
     platform: sun
     event: sunrise
   action:
-    - service: script.amp_settings
-      data:
-        media_player: 'media_player.livingroomcc'
-        volume_level: 0.22
+#    - service: script.amp_settings
+#      data:
+#        media_player: 'media_player.media_player_1'
+#        volume_level: 0.22
 
     - service: media_player.play_media
       data_template:
-        entity_id: >
-          {% if states.group.bed.state == 'off' %}
-          media_player.livingroomCC
-          {% else %}
-          media_player.alarm_clock, media_player.bedroom_alarm_panel
-          {% endif %}
+        entity_id: media_player.media_player_1
         media_content_id: >
-          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/rooster.wav
+          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/two-tone-chime.mp3
         media_content_type: audio/mp4

@@ -5,7 +5,10 @@
       hours: '*'
       minutes: '0'
   action:
-    - service: script.zanzito_say
+    - service: script.notify
       data_template:
-        message: >
+        notify_display: >
           Time to stretch.
+        notify_say: "Time to stretch."
+        notify_level: 2
+        notify_dest: 'DennisPhone'

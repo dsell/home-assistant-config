@@ -15,7 +15,7 @@ cards:
     group: true      
     entity: media_player.media_player_1
     source: full
-    artwork: true
+    artwork: cover
     idle_view:
       when_idle: false
       when_standby: false
@@ -24,6 +24,14 @@ cards:
       progress: false
       shuffle: false
       source: true
+      runtime: false
+      artwork_border: false
+    speaker_group:
+      platform: snapcast
+      show_group_count: true
+      entities:
+        - entity_id: media_player.snapcast_client_7c_c7_09_b6_08_a7
+          name: 'Kitchen'        
     shortcuts:
       columns: 3 # Max buttons per row
       buttons:

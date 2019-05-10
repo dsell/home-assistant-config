@@ -4,15 +4,14 @@
     entity_id: sensor.sonoff3_humidity
     below: '80'
   action:
-  - service: script.zanzito_say
+  - service: script.notify
     data:
-      dest_id: "DennisPhone" 
-      message: "Warning: Grafting humidity low!"
-  - service: persistent_notification.create
-    data:
-      message: "Warning: Grafting humidity low!"
-      title: "Grafting"
-      notification_id: "grafting_l_alert"      
+      notify_dest: "DennisPhone" 
+      notify_say: "Warning: Grafting humidity low!"
+      notify_display: "Warning: Grafting humidity low!"
+      notify_title: "Grafting"
+      notify_id: "grafting_l_alert"      
+      notify_level: 3
 
 - alias: Notification Grafting Humidity High
   trigger:

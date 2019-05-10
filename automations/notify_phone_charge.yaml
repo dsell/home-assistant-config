@@ -61,7 +61,7 @@
     entity_id: sensor.phone_battery
     below: '50'
   action:
-  - service: script.send_alert
+  - service: script.notify
     data:
       dest_id: "DennisPhone" 
       message: "Warning!  Phone battery below 50% charge."
