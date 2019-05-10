@@ -176,9 +176,6 @@ cards:
     entities:
       - entity: binary_sensor.test_motion
         secondary_info: last-changed
-      - sensor.d1mini02_dimmer
-      - sensor.d1mini02_color
-      - sensor.d1mini02_scheme
       - switch.d1mini02_led_state
       - sensor.d1mini02_uptime
       - sensor.d1mini02_wifi_downtime
@@ -223,11 +220,6 @@ cards:
     title: "D1 mini #04"
     show_header_toggle: false
     entities:
-#      - entity: light.led_4
-#        secondary_info: last-changed
-      - sensor.d1mini04_dimmer
-      - sensor.d1mini04_color
-      - sensor.d1mini04_scheme
       - switch.d1mini04_led_state
       - sensor.d1mini04_uptime
       - sensor.d1mini04_wifi_downtime
@@ -247,11 +239,6 @@ cards:
     title: "D1 mini #05"
     show_header_toggle: false
     entities:
-#      - entity: light.led_5
-#        secondary_info: last-changed
-      - sensor.d1mini05_dimmer
-      - sensor.d1mini05_color
-      - sensor.d1mini05_scheme
       - switch.d1mini05_led_state
       - sensor.d1mini05_uptime
       - sensor.d1mini05_wifi_downtime
@@ -271,11 +258,6 @@ cards:
     title: "D1 mini #06"
     show_header_toggle: false
     entities:
-#      - entity: light.led_6
-#        secondary_info: last-changed
-      - sensor.d1mini06_dimmer
-      - sensor.d1mini06_color
-      - sensor.d1mini06_scheme
       - switch.d1mini06_led_state
       - sensor.d1mini06_uptime
       - sensor.d1mini06_wifi_downtime
@@ -295,11 +277,6 @@ cards:
     title: "D1 mini #07"
     show_header_toggle: false
     entities:
-#      - entity: light.led_7
-#        secondary_info: last-changed
-      - sensor.d1mini07_dimmer
-      - sensor.d1mini07_color
-      - sensor.d1mini07_scheme
       - switch.d1mini07_led_state
       - sensor.d1mini07_uptime
       - sensor.d1mini07_wifi_downtime

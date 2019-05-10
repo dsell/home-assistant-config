@@ -1,29 +1,5 @@
 # Specific
 
-  - platform: mqtt
-    name: "D1mini07 Dimmer"
-    state_topic: "tele/D1mini07/STATE"
-    value_template: "{{value_json['Dimmer'] }}"
-    availability_topic: "tele/D1mini07/LWT"
-    payload_available: "Online"
-    payload_not_available: "Offline" 
-
-  - platform: mqtt
-    name: "D1mini07 Color"
-    state_topic: "tele/D1mini07/STATE"
-    value_template: "{{value_json['Color'] }}"
-    availability_topic: "tele/D1mini07/LWT"
-    payload_available: "Online"
-    payload_not_available: "Offline" 
-
-  - platform: mqtt
-    name: "D1mini07 Scheme"
-    state_topic: "tele/D1mini07/STATE"
-    value_template: "{{value_json['Scheme'] }}"
-    availability_topic: "tele/D1mini07/LWT"
-    payload_available: "Online"
-    payload_not_available: "Offline" 
-
 
   - platform: mqtt
     name: "D1mini07 LED"
