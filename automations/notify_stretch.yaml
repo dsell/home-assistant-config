@@ -7,8 +7,7 @@
   action:
     - service: script.notify
       data_template:
-        notify_display: >
-          Time to stretch.
+        notify_display: "Time to stretch."
         notify_say: "Time to stretch."
         notify_level: 2
         notify_dest: 'DennisPhone'

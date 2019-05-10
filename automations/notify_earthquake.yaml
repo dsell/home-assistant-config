@@ -9,8 +9,7 @@
       notify_dest: "DennisPhone" 
       notify_say: "The USGS has measured {{ states.sensor.usgs_all_earthquakes_past_hour.state }} earthquake in the last hour within 500 miles."
       notify_display: >
-                        "The USGS has measured {{ states.sensor.usgs_all_earthquakes_past_hour.state }} earthquake(s) in the last hour within 500 miles.\n"
-                        {{ now().strftime("%H:%M") }}
+                        "The USGS has measured {{ states.sensor.usgs_all_earthquakes_past_hour.state }} earthquake(s) in the last hour within 500 miles."
       notify_title: "Earthquake Detected"
       notify_level: 1
-      notify_id: quake_alert     
+      notify_id: "quake_alert"     

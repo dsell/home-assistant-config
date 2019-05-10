@@ -11,7 +11,7 @@
       notify_display: >
                         "Phone temperature has risen to {{ states.sensor.phone_temperature.state }} F."
       notify_level: 3
-      notify_id: phonehot_alert  
+      notify_id: "phonehot_alert"  
       notify_say: "Your phone is now {{ states.sensor.phone_temperature.state }} degrees fahrenheit."
       notify_title: "Phone Hot"
       

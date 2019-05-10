@@ -7,12 +7,10 @@
   action:
     - service: script.notify
       data_template:
-        notify_title:  Driveway Alert
-        notify_say: >
-                      A car is in the lane.
-        notify_dest: DennisPhone
-        notify_display: >
-                      A car is in the lane.
-        notify_id: driveway_alert
+        notify_title:  "Driveway Alert"
+        notify_say: "A car is in the lane."
+        notify_dest: "DennisPhone"
+        notify_display: "A car is in the lane."
+        notify_id: "driveway_alert"
         notify_level: 2
         

@@ -5,7 +5,7 @@
     from: 'off'
     to: 'on'
   action:
-    - service: script.notify_manager_set
+    - service: script.notify
       data_template:
         notify_title:  Dinner Bell
         notify_say: >
@@ -24,6 +24,6 @@
     from: 'on'
     to: 'off'
   action:
-    - service: script.notify_manager_clear
+    - service: script.notify_clear
       data:
         notify_id: dinner_bell

@@ -11,11 +11,9 @@
       notify_dest: "DennisPhone" 
       notify_say: >
                 There is currently a {{ states.binary_sensor.aurora_visibility.attributes.visibility_level }} % chance of viewing auroras.  
-                {{ "\n" }}
                 {{ states.binary_sensor.aurora_visibility.attributes.message }}
       notify_display: >
                 There is currently a {{ states.binary_sensor.aurora_visibility.attributes.visibility_level }} % chance of viewing auroras.  
-                {{ "\n" }}
                 {{ states.binary_sensor.aurora_visibility.attributes.message }}
       notify_title: "Aurora Alert"
       notify_id: "aurora_alert" 
