@@ -1,7 +1,7 @@
   - alias: Notification High UV
     trigger: 
     - platform: state
-      entity: sensor.current_uv_level
+      entity_id: sensor.current_uv_level
       to: 'High'
     action:
     - service: script.notify
