@@ -39,6 +39,12 @@ cards:
       entities: 
         - entity: sensor.nws_alerts
           secondary_info: last-changed
+        - entity: binary_sensor.protection_window
+        - entity: sensor.current_uv_level          
+        - entity: sensor.current_uv_index
+        - entity: sensor.max_uv_index
+        - entity: sensor.skin_type_6_safe_exposure_time
+        - entity: sensor.current_ozone_level
 
 #------------------------------
 
