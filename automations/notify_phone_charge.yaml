@@ -63,13 +63,11 @@
   action:
   - service: script.notify
     data:
-      dest_id: "DennisPhone" 
-      message: "Warning!  Phone battery below 50% charge."
-  - service: persistent_notification.create
-    data:
-      message: "Phone Battery below 50%"
-      title: "Phone Low"
-      notification_id: phone_batt_low
+      notify_dest: "DennisPhone" 
+      notify_say: "Warning!  Phone battery below 50% charge."
+      notify_display: "Phone Battery below 50%"
+      notify_title: "Phone Low"
+      notify_id: 'phone_batt_low'
       
 - alias: Notification Phone very low
   trigger:

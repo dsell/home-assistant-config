@@ -112,7 +112,7 @@
         entity_id: input_boolean.zanzito_play_alarm
         
 
-- alias: 'Alarm Timer Switch Activated'
+- alias: 'Event Alarm Timer Switch'
   trigger:
     - platform: state
       entity_id: input_boolean.timer_start

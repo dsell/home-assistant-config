@@ -16,23 +16,51 @@
 #---------------------------------------
 
 
-notify_manager_set:
-  alias: Notify
+notify_persist:
+  alias: Notify Persist 
   sequence:
     - service: persistent_notification.create
       data_template:
-        message: '{{ notify_display }}'
-        title: '{{ notify_title }}'
-        notification_id: '{{ notify_id  }}' 
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.notification_alert
+        message: '{{ notif_display }}'
+        title: '{{ notif_title }}'
+        notification_id: '{{ notif_id  }}'
+        
+notify_say:
+  alias: Notify Say
+  sequence:
     - service: script.zanzito_say
       data_template:
-        dest_id: '{{ notify_dest }}'
-        message: '{{ notify_say }}'
+        dest_id: '{{ notif_dest }}'
+        message: '{{ notif_say }}'
+        
+notify_alert:
+  alias: Notify Alert
+  sequence:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.notification_alert  
+        
+notify:
+  alias: Notify
+  sequence:
+    - service: script.notify_persist
+      data_template:
+        notif_id: '{{ notify_id }}'
+        notif_title: '{{ notify_title }}'
+        notif_display: '{{ notify_display }}'
+        notif_persist: '{{ notify_persist }}'
+    - service: script.notify_alert
+      data_template:
+        notif_alert: '{{ notify_alert }}'
+    - service: script.notify_say
+      data_template:
+        notif_level: '{{ notify_level }}'
+        notif_say: '{{ notify_say }}'
+        notif_dest: '{{ notify_dest }}'
+
+
         
         
-notify_manager_clear:
+notify_clear:
   alias: Notify Clear
   sequence:
     - service: script.zanzito_say

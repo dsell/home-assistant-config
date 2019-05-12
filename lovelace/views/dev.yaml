@@ -133,6 +133,9 @@ cards:
         name: Tree View of MQTT
         url: http://192.168.1.204/tree.html
       - type: weblink
+        name: Truck
+        url: http://www.findu.com/cgi-bin/track.cgi?call=N9WTM-9
+      - type: weblink
         name: Road Conditions
         url: https://hb.511ia.org/#plowHome?layers=winterDriving%2CimagePlows%2ClocationPlows&timeFrame=TODAY
 
