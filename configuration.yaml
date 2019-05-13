@@ -203,7 +203,7 @@ media_player:
 - platform: mpd
   host: 192.168.1.212
   port: 6603
-  name: media_player_3
+  name: media_player_notifications
   
 speedtestdotnet:
   server_id: 

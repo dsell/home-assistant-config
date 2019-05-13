@@ -103,47 +103,19 @@ cards:
           type: script
           id: script.start_sleep
   - type: custom:mini-media-player
-    name: 'Media Player #3'
+    name: 'Media Player Notificatons'
     group: true      
-    entity: media_player.media_player_3
+    entity: media_player.media_player_notifications
     source: full
-    artwork: true
+    artwork: false
     idle_view:
       when_idle: false
       when_standby: false
-    more_info: true
+    more_info: false
     hide:
-      progress: false
-      shuffle: false
+      progress: true
+      shuffle: true
       source: true
-    shortcuts:
-      columns: 3 # Max buttons per row
-      buttons:
-        # Start predefined playlist
-        - name: Deace
-          type: script
-          id: script.start_deace
-        - name: Dawson
-          type: script
-          id: script.start_dawson
-        - name: Worship
-          type: script
-          id: script.start_worship
-        - name: Blugrass
-          type: script
-          id: script.start_bluegrass
-        - name: Gospel
-          type: start
-          id: script.start_gospel
-        - name: Classical
-          type: script
-          id: script.start_classical              
-        - name: Christmas
-          type: script
-          id: script.start_christmas
-        - name: Sleep
-          type: script
-          id: script.start_sleep
   - type: vertical-stack
     cards: 
       - type: custom:mini-media-player
