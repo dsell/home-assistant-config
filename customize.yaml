@@ -1,0 +1,14 @@
+sensor.d1mini03_barometric_pressure:
+  device_class: pressure
+sensor.d1mini03_humidity:
+  device_class: humidity
+sensor.d1mini03_temperature:
+  device_class: temperature
+sensor.phone_temperature:
+  device_class: temperature
+sensor.phone_humidity:
+  device_class: humidity
+sensor.phone_battery:
+  device_class: battery
+sensor.phone_barometric_pressure:
+  device_class: pressure
