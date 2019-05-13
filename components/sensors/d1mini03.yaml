@@ -8,7 +8,15 @@
     availability_topic: "tele/D1mini03/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
-    
+  
+  - platform: filter
+    name: "D1mini03 Temperature"
+    entity_id: sensor.d1mini03_temperature_raw
+    filters:
+      - filter: outlier
+        window_size: 4
+        radius: 4.0  
+      
 #  - platform: template
 #    sensors:
 #      D1mini03_heat_index:
@@ -21,7 +29,7 @@
 # HI = -42.379 + 2.04901523*T + 10.14333127*RH - .22475541*T*RH - .00683783*T*T - .05481717*RH*RH + .00122874*T*T*RH + .00085282*T*RH*RH - .00000199*T*T*RH*RH
 
   - platform: mqtt
-    name: "D1mini03 Humidity"
+    name: "D1mini03 Humidity Raw"
     state_topic: "tele/D1mini03/SENSOR"
     value_template: "{{ value_json['BME280'].Humidity }}"
     unit_of_measurement: "%"
@@ -29,9 +37,17 @@
     availability_topic: "tele/D1mini03/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
-
+    
+  - platform: filter
+    name: "D1mini03 Humidity"
+    entity_id: sensor.d1mini03_humidity_raw
+    filters:
+      - filter: outlier 
+        window_size: 4
+        radius: 4.0  
+      
   - platform: mqtt
-    name: "D1mini03 Barometric Pressure"
+    name: "D1mini03 Barometric Pressure Raw"
     state_topic: "tele/D1mini03/SENSOR"
     value_template: "{{ (value_json['BME280'].Pressure | float * 0.03937) | round(3) }}"
     unit_of_measurement: "inHg"
@@ -40,6 +56,14 @@
     payload_available: "Online"
     payload_not_available: "Offline" 
 
+  - platform: filter
+    name: "D1mini03 Barometric Pressure"
+    entity_id: sensor.d1mini03_barometric_pressure_raw
+    filters:
+      - filter: range
+        upper_bound: 33
+        lower_bound: 28
+      
   - platform: mqtt
     name: "D1mini03 LED"
     state_topic: "stat/D1mini03/RESULT"

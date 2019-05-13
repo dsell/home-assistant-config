@@ -15,7 +15,7 @@ homeassistant:
 
   
   # Customization file
-#  customize: !include customize.yaml
+  customize: !include customize.yaml
 
 # Show links to resources in log and frontend
 #introduction:
@@ -214,6 +214,7 @@ speedtestdotnet:
     - ping
     - download
     - upload
+    
     
 camera: !include_dir_merge_list components/cameras
 climate: !include_dir_merge_list components/climate_controls

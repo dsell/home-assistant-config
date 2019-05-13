@@ -1,31 +1,63 @@
 - platform: mqtt
-  name: "Phone Battery"
+  name: "Phone Battery Raw"
   state_topic: "zanzito/DennisPhone/battery_level"
   qos: 0
   unit_of_measurement: "%"
     
+- platform: filter
+  name: "Phone Battery"
+  entity_id: sensor.phone_battery_raw
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 6.0  
+      
 - platform: mqtt
-  name: "Phone Temperature"
+  name: "Phone Temperature Raw"
   state_topic: "zanzito/DennisPhone/shtc1_ambient_temperature_sensor"
   value_template: "{{ (value | float * 1.8 | float + 32) | round(2) }}"
   qos: 0
   unit_of_measurement: "F"
   device_class: temperature
 
+- platform: filter
+  name: "Phone Temperature"
+  entity_id: sensor.phone_temperature_raw
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 4.0  
+
 - platform: mqtt
-  name: "Phone Barometric Pressure"
+  name: "Phone Barometric Pressure Raw"
   state_topic: "zanzito/DennisPhone/barometer_sensor"
   value_template: "{{ (value | float * 0.029529983071445) | round(2) }}"
   qos: 0
   unit_of_measurement: "in Hg"
   device_class: pressure
   
+- platform: filter
+  name: "Phone Barometric Pressure"
+  entity_id: sensor.phone_barometric_pressure_raw
+  filters:
+    - filter: range
+      upper_bound: 33
+      lower_bound: 28
+  
 - platform: mqtt
-  name: "Phone Humidity"
+  name: "Phone Humidity Raw"
   state_topic: "zanzito/DennisPhone/shtc1_relative_humidity_sensor"
   qos: 0
   unit_of_measurement: "%"
   device_class: humidity
+  
+- platform: filter
+  name: "Phone Humidity"
+  entity_id: sensor.phone_humidity_raw
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 4.0  
   
 - platform: mqtt
   name: "Phone Steps"
