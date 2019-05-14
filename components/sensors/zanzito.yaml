@@ -41,8 +41,8 @@
   entity_id: sensor.phone_barometric_pressure_raw
   filters:
     - filter: range
-      upper_bound: 33
-      lower_bound: 28
+      upper_bound: 33.0
+      lower_bound: 28.0
   
 - platform: mqtt
   name: "Phone Humidity Raw"
