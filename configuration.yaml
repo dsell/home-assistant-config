@@ -141,7 +141,22 @@ openuv:
       - safe_exposure_time_type_4
       - safe_exposure_time_type_5
       - safe_exposure_time_type_6
-  
+
+
+
+iqvia:
+  zip_code: "00544"
+  monitored_conditions:
+    - allergy_average_forecasted
+    - allergy_index_today
+    - allergy_index_tomorrow
+    - asthma_average_forecasted
+    - asthma_index_today
+    - asthma_index_tomorrow
+    - disease_average_forecasted
+    - disease_index_today
+
+
 # Input Numbers
 input_number:
   alarmhours:
