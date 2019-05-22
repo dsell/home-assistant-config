@@ -22,14 +22,12 @@
       - queries_cached
 
   - platform: whois
-    name: sellfamily_us
-    #friendly_name: sellfamily.us
-    domain: sellfamily.us
+    name: dns1
+    domain: DNS1
     
   - platform: whois
-    name: sellfamily_org
-    #friendly_name: sellfamily.org
-    domain: sellfamily.org    
+    name: dns2
+    domain: DNS2    
     
 
 
