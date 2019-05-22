@@ -145,7 +145,7 @@ openuv:
 
 
 iqvia:
-  zip_code: "00544"
+  zip_code: !secret ZIP_CODE
   monitored_conditions:
     - allergy_average_forecasted
     - allergy_index_today
