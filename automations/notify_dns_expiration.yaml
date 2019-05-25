@@ -10,9 +10,9 @@
   action:
   - service: script.notify
     data_template:
-      notify_display: "DNS resistration is expiring for " !secret dns1 " in {{ states.sensor.dns1.state }} days."
+      notify_display: "DNS resistration is expiring for .us in {{ states.sensor.dns1.state }} days."
       notify_dest: "DennisPhone" 
-      notify_say: "DNS registration is expiring for " !secret dns1 " in {{ states.sensor.dns1.state }} days."
+      notify_say: "DNS registration is expiring for .us in {{ states.sensor.dns1.state }} days."
       notify_title: "DNS Expiring"
       notify_level: 1
       notify_id: "dns1_alert"
