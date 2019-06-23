@@ -1,0 +1,7 @@
+    
+- alias: "Intent Get Briefing"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetBriefing
+  action:
+    - service: script.briefing
