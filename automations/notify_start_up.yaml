@@ -4,7 +4,7 @@
   - platform: homeassistant
     event: start
   action:
-  - service: script.zanzito_say
+  - service: shell_command.say
     data:
-      dest_id: "DennisPhone" 
-      message: "System restart complete.."    
+      dest_id: "default" 
+      message: "'System restart complete..'"    

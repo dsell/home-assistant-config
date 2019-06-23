@@ -1,27 +1,27 @@
 - alias: 'Intent Chit Chat - thank you'
   trigger:
-    platform: mqtt
-    topic: +/chitchat
-    payload: "thankyou"
+    platform: event
+    event_type: rhasspy_ThankYou
   action:
-    service: script.zanzito_say
+    service: shell_command.say
     data_template:
-      dest_id: DennisPhone
+      dest_id: default
       message: >-
-        {% set responses = [
-        "You're welcome",
+        '{% set responses = [
+        "Youre welcome",
         "You got it",
-        "Don't mention it",
+        "Dont mention it",
         "No worries",
         "Not a problem",
-        "It's my pleasure",
+        "Its my pleasure",
         "It was nothing",
-        "I'm happy to help",
+        "Im happy to help",
         "Not at all",
         "Sure",
-        "That's okay",
-        "That's alright",
+        "Thats okay",
+        "Thats alright",
         "Anytime"
         ] %}
         {% set rindex =  (range(0, (responses | length - 1) )|random) -%}
-        {{responses[rindex]}}
+        {{responses[rindex]}}'
+        
