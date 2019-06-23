@@ -32,6 +32,9 @@ notify_say:
       data_template:
         dest_id: '{{ notif_dest }}'
         message: '{{ notif_say }}'
+    - service: shell_command.say
+      data_template:
+        message: '{{ notif_say }}'
         
 notify_alert:
   alias: Notify Alert
