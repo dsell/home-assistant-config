@@ -1,0 +1,7 @@
+    
+- alias: "Intent Restart"
+  trigger:
+    platform: event
+    event_type: rhasspy_Restart
+  action:
+    - service: script.restart
