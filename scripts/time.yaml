@@ -21,8 +21,8 @@ say_time:
           {% endif %}
           {{ minute }}
           {% if PM == true %}
-            PM
+            Pee eM
           {% else %}
-            AM
+            Ayy eM
           {% endif %}'
         dest_id: default
