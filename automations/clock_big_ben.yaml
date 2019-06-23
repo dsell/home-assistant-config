@@ -27,8 +27,8 @@
           media_player.media_player_1
         media_content_id: >
           {% if now().strftime("%M")|int == 30 %}
-          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/cuckoo-clock-01.wav
+          /config/audio/cuckoo-clock-01.wav
           {% else %}
-          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/cuckoo-clock-{{now().strftime("%I")}}.wav
+          /config/audio/cuckoo-clock-{{now().strftime("%I")}}.wav
           {% endif %}
         media_content_type: audio/mp4

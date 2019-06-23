@@ -5,9 +5,9 @@
       hours: '*'
       minutes: '0'
     - platform: time_pattern
-      minutes: 15
+      minutes: '15'
     - platform: time_pattern
-      minutes: 45
+      minutes: '45'
     - platform: time_pattern
       minutes: '30'
   condition:
@@ -25,18 +25,17 @@
 #      data:
 #        media_player: 'media_player.media_player_1'
 #        volume_level: 0.2
-    - service: media_player.play_media
+    - service: shell_command.play
       data_template:
-        entity_id: >
-          media_player.media_player_1
-        media_content_id: >
-          {% if now().strftime("%M")|int == 15 %}
-          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/gf_clock/Toll-1Quarter.mp3
-          {% elif  now().strftime("%M")|int == 30 %}
-          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/gf_clock/Toll-2Quarter.mp3       
-          {% elif  now().strftime("%M")|int == 45 %}
-          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/gf_clock/Toll-3Quarter.mp3           
-          {% else %}
-          https://raw.githubusercontent.com/CCOSTAN/Home-AssistantConfig/master/config/sounds/gf_clock/{{now().strftime("%I")}}-hour.mp3
-          {% endif %}
-        media_content_type: audio/mp4
+        file: >
+            {% if now().strftime('%M')|int == 15 %}
+            /config/audio/Toll-1Quarter.wav
+            {% elif  now().strftime('%M')|int == 30 %}
+            /config/audio/Toll-2Quarter.wav
+            {% elif  now().strftime('%M')|int == 45 %}
+            /config/audio/Toll-3Quarter.wav
+            {% else %}
+            /config/audio/{{now().strftime('%I')}}-hour.wav
+            {% endif %}
+          
+          

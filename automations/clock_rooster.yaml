@@ -8,9 +8,14 @@
 #      data:
 #        media_player: 'media_player.media_player_1'
 #        volume_level: 0.22
-    - service: media_player.play_media
-      data_template:
-        entity_id: media_player.media_player_1
-        media_content_id: >
-          "Rooster-crowing-in-the-morning.mp3"
-        media_content_type: audio/mp4
+#    - service: media_player.play_media
+#      data_template:
+#        entity_id: media_player.media_player_1
+#        media_content_id: >
+#          "Rooster-crowing-in-the-morning.mp3"
+#        media_content_type: audio/mp4
+     - service: shell_command.play
+       data:
+         file: "/config/audio/rooster.wav"
+      
+         

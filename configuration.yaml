@@ -12,6 +12,8 @@ homeassistant:
   time_zone: America/Chicago
   whitelist_external_dirs: 
     - /config
+    - /config/audio
+    - /usr/bin
 
   
   # Customization file
@@ -203,7 +205,24 @@ shell_command:
   start_gospel: start_gospel.sh
   start_christmas: start_christmas.sh
   start_sleep: start_sleep.sh
-  
+  say: 'curl -X POST "http://192.168.1.107:12101/api/text-to-speech" -H  "accept: text/plain" -H  "Content-Type: text/plain" -d {{message}}'
+  play: 'curl -X POST "http://192.168.1.107:12101/api/play-wav" -H  "accept: text/plain" -H  "Content-Type: audio/wav" --data-binary "@{{ file }}"'
+
+notify:
+  - name: voice
+    platform: command_line
+    command: 'curl -X POST "http://192.168.1.107:12101/api/text-to-speech" -H  "accept: text/plain" -H  "Content-Type: text/plain" -d "@-"'
+    
+alert:
+  ds_morning_pills:
+    name: "DS Take AM Pills"
+    entity_id: binary_sensor.ds_morning_pills
+    message: "Time to take your morning pills."
+    repeat: 15
+    done_message: "Thank You, for taking your pills."
+    notifiers:
+      - voice
+
 media_player:
 - platform: snapcast
   host: 192.168.1.212
@@ -229,7 +248,7 @@ speedtestdotnet:
     - ping
     - download
     - upload
-    
+
     
 camera: !include_dir_merge_list components/cameras
 climate: !include_dir_merge_list components/climate_controls

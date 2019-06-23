@@ -21,7 +21,7 @@
       entity_id: 'input_boolean.theater_mode'
       state: 'off'     
   action:
-    - service: script.zanzito_say
+    - service: notify.voice
       data_template:
         message: >
           The time is now
@@ -49,5 +49,5 @@
 #            Pee eMm
  #         {% else %}
  #           Aay eMm
- #         {% endif %}
-        dest_id: DennisPhone
+ #         {% endif %}'
+#        dest_id: default
