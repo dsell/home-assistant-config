@@ -2,12 +2,10 @@
 
 wakeup:
   sequence:
-  - service: mqtt.publish
+  - service: shell_command.say
     data_template:
-      payload: 'Good Morning Dennis.'
-      topic: 'zanzito/DennisPhone/say'
-      qos: 1
-      retain: 0
+      data:
+        message: 'Good Morning Dennis.'
   - service: media_player.play_media
     data:
       entity_id: media_player.mpd
