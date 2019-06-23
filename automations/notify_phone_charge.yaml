@@ -7,8 +7,8 @@
   action:
   - service: script.zanzito_say
     data:
-      dest_id: "DennisPhone" 
-      message: "Phone mostly charged"
+      dest_id: "default" 
+      message: "'Phone mostly charged'"
 
       
 - alias: Notification Phone charging
@@ -20,8 +20,8 @@
   action:
   - service: script.zanzito_say
     data:
-      dest_id: "DennisPhone" 
-      message: "Phone charging initiated"
+      dest_id: "default" 
+      message: "'Phone charging initiated'"
       
 - alias: Notification Phone charging ended
   trigger:
@@ -36,8 +36,8 @@
   action:
   - service: script.zanzito_say
     data:
-      dest_id: "DennisPhone" 
-      message: "Phone no longer charging"
+      dest_id: "default" 
+      message: "'Phone no longer charging'"
 
 - alias: Notification Phone charged
   trigger:
@@ -52,8 +52,8 @@
   action:
   - service: script.zanzito_say
     data:
-      dest_id: "DennisPhone" 
-      message: "Phone charging complete"
+      dest_id: "default" 
+      message: "'Phone charging complete'"
       
 - alias: Notification Phone low
   trigger:
@@ -63,8 +63,8 @@
   action:
   - service: script.notify
     data:
-      notify_dest: "DennisPhone" 
-      notify_say: "Warning!  Phone battery below 50% charge."
+      notify_dest: "default" 
+      notify_say: "'Warning!  Phone battery below 50% charge.'"
       notify_display: "Phone Battery below 50%"
       notify_title: "Phone Low"
       notify_id: 'phone_batt_low'
@@ -77,8 +77,8 @@
   action:
   - service: script.zanzito_say
     data:
-      dest_id: "DennisPhone" 
-      message: "Warning!  Phone battery below 25% charge."
+      dest_id: "default" 
+      message: "'Warning!  Phone battery below 25% charge.'"
   - service: persistent_notification.create
     data:
       message: "Phone Battery below 25%"
