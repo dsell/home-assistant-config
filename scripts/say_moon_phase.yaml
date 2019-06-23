@@ -1,0 +1,9 @@
+say_moon_phase:
+  alias: Say Moon Phase
+  sequence:
+    - service: shell_command.say
+      data_template:
+        message: >
+          'The phase of the moon is currently: 
+          {{ states.sensor.moon.state }}'
+        dest_id: default

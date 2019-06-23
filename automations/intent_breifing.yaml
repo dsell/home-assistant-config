@@ -1,6 +1,0 @@
-- alias: Intent Briefing
-  trigger:
-    - platform: mqtt
-      topic: +/briefing
-  action:
-    - service: script.briefing

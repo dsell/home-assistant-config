@@ -1,0 +1,7 @@
+    
+- alias: "Intent Get Date"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetDate
+  action:
+    - service: script.say_date

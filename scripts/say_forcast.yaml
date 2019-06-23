@@ -1,9 +1,10 @@
-say_forcast:
-  alias: Say Forcast
+say_forecast:
+  alias: Say Forecast
   sequence:
-    - service: script.zanzito_say
+    - service: shell_command.say
       data_template:
         message: >
-          The weather forcast for today is; 
-          {{ states.weather.dark_sky.forcast }}
-        dest_id: DennisPhone
+          'The weather is currently {{ states.weather.dark_sky.state }}.
+          The forcast for today is; 
+          {{ states.weather.dark_sky.attributes.forecast[0].condition }}'
+        dest_id: default
