@@ -22,10 +22,10 @@ start_timer:
          
 remaining_timer:
     sequence:
-      - service: script.zanzito_say
+      - service: shell_command.say
         data_template: 
           message: >
-            Time remaining 
+            'Time remaining 
             {% set t = states.timer.user_timer.attributes.remaining.split(":") %}
             {% if t[0] > 0 %}
             {{ t[0] }} hours,
@@ -35,5 +35,5 @@ remaining_timer:
             {% endif %}
             {% if t[2] > 0 %}
             {{ t[2] }} seconds.
-            {% endif %}            
-          dest_id: DennisPhone
+            {% endif %}'            
+          dest_id: default
