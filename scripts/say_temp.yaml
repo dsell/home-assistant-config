@@ -1,0 +1,9 @@
+say_temp:
+  alias: Say Temp
+  sequence:
+    - service: shell_command.say
+      data_template:
+        message: >
+          'The temperature is currently: 
+          {{ states.sensor.d1mini03_temperature.state }}'
+        dest_id: default

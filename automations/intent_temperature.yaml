@@ -1,0 +1,7 @@
+    
+- alias: "Intent Get Temperature"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetTemperature
+  action:
+    - service: script.say_temp
