@@ -1,4 +1,5 @@
 
 - platform: mqtt_json
   devices:
-    dennis_phone: zanzito/DennisPhone/location
+ #   dennis_phone: 'zanzito/DennisPhone/location'
+    dennis_truck:  '/raw/aprsis/N9WTM-9/json'   #!secret APRS_TRUCK06    

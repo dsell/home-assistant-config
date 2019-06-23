@@ -121,6 +121,7 @@ cards:
       entities:
         - device_tracker.dennis_phone
 #        - device_tracker.laptop_tuxtop5
+        - device_tracker.dennis_truck06
       default_zoom:
         13
           
@@ -135,4 +136,5 @@ cards:
           secondary_info: last-changed
         - entity: device_tracker.dennis_phone
           secondary_info: last-changed
+        - entity: device_tracker.dennis_truck          
            
