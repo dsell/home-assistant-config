@@ -4,3 +4,10 @@
       topic: +/time
   action:
     - service: script.say_time
+    
+- alias: "Intent Get Time"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetTime
+  action:
+    - service: script.say_time    
