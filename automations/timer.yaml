@@ -2,6 +2,8 @@
   trigger:
     - platform: mqtt
       topic: +/set_timer
+    - platform: event
+      event_type: rhasspy_SetTimer
   action:
     - service: input_number.set_value
       data_template:
@@ -52,6 +54,8 @@
   trigger:
     - platform: mqtt
       topic: +/remaining_timer
+    - platform: event
+      event_type: rhasspy_TimeRemaining
   action:
     - service: script.remaining_timer
         
@@ -60,6 +64,8 @@
   trigger:
     - platform: mqtt
       topic: +/cancel_timer
+    - platform: event
+      event_type: rhasspy_TimerCancer
     - platform: state
       entity_id: input_boolean.timer_start
       from: 'on'

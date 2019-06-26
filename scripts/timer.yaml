@@ -22,7 +22,7 @@ start_timer:
          
 remaining_timer:
     sequence:
-      - service: shell_command.say
+      - service: notify.voice
         data_template: 
           message: >
             'Time remaining 
@@ -36,4 +36,3 @@ remaining_timer:
             {% if t[2] > 0 %}
             {{ t[2] }} seconds.
             {% endif %}'            
-          dest_id: default
