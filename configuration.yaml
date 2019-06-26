@@ -222,7 +222,19 @@ alert:
     done_message: "Thank You, for taking your pills."
     notifiers:
       - voice
-
+  bedtime:
+    name: "Bed Time Alert"
+    entity_id: binary_sensor.bedtime
+    message: "It is time to go to bed."
+    done_message: "Good Night!"
+    repeat:
+      - 30
+      - 15
+      - 10
+      - 5
+    notifiers:
+      - voice
+      
 media_player:
 - platform: snapcast
   host: 192.168.1.212
@@ -230,14 +242,14 @@ media_player:
   host: 192.168.1.212
   port: 6601
   name: media_player_1
-- platform: mpd
-  host: 192.168.1.212
-  port: 6602
-  name: media_player_2
-- platform: mpd
-  host: 192.168.1.212
-  port: 6603
-  name: media_player_notifications
+#- platform: mpd
+#  host: 192.168.1.212
+#  port: 6602
+#  name: media_player_2
+#- platform: mpd
+#  host: 192.168.1.212
+#  port: 6603
+#  name: media_player_3
   
 speedtestdotnet:
   server_id: 
