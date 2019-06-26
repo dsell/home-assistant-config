@@ -55,7 +55,12 @@ cards:
       - entity: sensor.sunrise
       - entity: sensor.sunset
       - entity: sensor.moon
-      
+
+#------------------------------
+  - type: iframe
+    url: "/local/quote.html"
+    aspect_ratio: 120%
+    
 #------------------------------
 
   - type: vertical-stack
