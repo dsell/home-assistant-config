@@ -61,48 +61,6 @@ cards:
           type: script
           id: script.start_sleep
   - type: custom:mini-media-player
-    name: 'Media Player #2'
-    group: true      
-    entity: media_player.media_player_2
-    source: full
-    artwork: true
-    idle_view:
-      when_idle: false
-      when_standby: false
-    more_info: true
-    hide:
-      progress: false
-      shuffle: false
-      source: true
-    shortcuts:
-      columns: 3 # Max buttons per row
-      buttons:
-        # Start predefined playlist
-        - name: Deace
-          type: script
-          id: script.start_deace
-        - name: Dawson
-          type: script
-          id: script.start_dawson
-        - name: Worship
-          type: script
-          id: script.start_worship
-        - name: Blugrass
-          type: script
-          id: script.start_bluegrass
-        - name: Gospel
-          type: start
-          id: script.start_gospel
-        - name: Classical
-          type: script
-          id: script.start_classical              
-        - name: Christmas
-          type: script
-          id: script.start_christmas
-        - name: Sleep
-          type: script
-          id: script.start_sleep
-  - type: custom:mini-media-player
     name: 'Media Player Notificatons'
     group: true      
     entity: media_player.media_player_notifications
@@ -147,7 +105,7 @@ cards:
           power: true
           volume: false
       - type: custom:mini-media-player
-        entity: media_player.snapcast_client_d4_be_d9_20_c5_f6
+        entity: media_player.snapcast_client_10_0b_a9_f2_39_88
         group: true
         hide:
           controls: true
