@@ -1,0 +1,11 @@
+    
+- alias: "Intent Pause"
+  trigger:
+    platform: event
+    event_type: rhasspy_Pause
+  action:
+    - service: media_player.media_play_pause
+      entity_id: media_player.media_player_1
+    - service: notify.voice
+      data:
+        message: "Pause toggled."

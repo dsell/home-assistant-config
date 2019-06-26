@@ -1,10 +1,14 @@
 say_forecast:
   alias: Say Forecast
   sequence:
-    - service: shell_command.say
+    - service: notify.voice
       data_template:
         message: >
-          'The weather is currently {{ states.weather.dark_sky.state }}.
+          The weather is currently {{ states.weather.dark_sky.state }}.
           The forcast for today is; 
-          {{ states.weather.dark_sky.attributes.forecast[0].condition }}'
-        dest_id: default
+          {{ states.weather.dark_sky.attributes.forecast[0].condition }}.
+          Total precipitation is forcast at {% if states.weather.dark_sky.attributes.forecast[0].precipitation == null %} zero {% else %} {{ states.weather.dark_sky.attributes.forecast[0].precipitation }} {% endif %} inches.
+          With a low of {{ states.weather.dark_sky.attributes.forecast[0].templow }} degrees farenheight.
+          And a high of {{ states.weather.dark_sky.attributes.forecast[0].temperature }} degrees farenheight.'
+          With wind speeds of up to {{ states.weather.dark_sky.attributes.forecast[0].wind_speed }} miles per hour
+          at a direction of {{ states.weather.dark_sky.attributes.forecast[0].wind_bearing }} degrees.

@@ -1,12 +1,10 @@
 say_rise_set:
   alias: Say Sunrise Sunset
   sequence:
-    - service: shell_command.say
+    - service: notify.voice
       data_template:
         message: >
-          'The sun rise today is at:
+          The sun rise today is at:
           {{ states.sensor.sunrise.state }} Aay eM,
-          
           The sun set today is at;
-          {{ states.sensor.sunset.state }} Pee eM'
-        dest_id: default
+          {{ states.sensor.sunset.state }} Pee eM

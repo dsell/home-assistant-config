@@ -1,13 +1,12 @@
 say_nws_warnings:
   alias: Say NWS Warnings
   sequence:
-    - service: shell_command.say
+    - service: notify.voice
       data_template:
         message: >
-          '{% if states.sensor.nws_alerts.state == '0' %}
+          {% if states.sensor.nws_alerts.state == '0' %}
           There are no currently active weather alerts
           {% else %}
           The current weather alerts are; 
           {{ states.sensor.nws_alerts.spoken_desc }}
-          {% endif %}'
-        dest_id: default
+          {% endif %}

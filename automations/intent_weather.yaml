@@ -1,0 +1,7 @@
+    
+- alias: "Intent Get Weather"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetWeather
+  action:
+    - service: script.say_forecast

@@ -1,0 +1,6 @@
+- alias: "Intent Get Date"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetMoonPhase
+  action:
+    - service: script.say_moon_phase

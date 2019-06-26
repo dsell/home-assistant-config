@@ -1,10 +1,10 @@
 say_date:
   alias: Say Date
   sequence:
-    - service: shell_command.say
+    - service: notify.voice
       data_template:
         message: >
-          'Todays date is; 
+          Todays date is; 
           {% set months = ('x', 'January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December') %}
           {% set dows = ( 'Sunday', 'Monday', 'Tuesaday', 'Wednesday', 'Thursaday', 'Friday', 'Saturday' )  %}
           {% set dow = now().strftime("%w")|int %}
@@ -12,10 +12,6 @@ say_date:
           {% set day = now().strftime("%d")|int %}
           {% set year = now().strftime("%Y")|int %}
           {{ dows[dow] }},
-          
           {{ months[month] }},
           {{ day }},
-          the year of our lord {{ year }}'
-        dest_id: default
-#          {% set months = ['x', 'January', 'Febuary', 'March', 'Arpil', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] %}
-#          {% set dows = [ 'Sunday', 'Monday', 'Tuesaday', 'Wednesday', 'Thursaday', 'Friday', 'Saturday' ]
+          the year of our lord {{ year }}
