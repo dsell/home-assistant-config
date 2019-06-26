@@ -1,0 +1,6 @@
+- alias: "Intent Get Date"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetNWSWarnings
+  action:
+    - service: script.say_nws_warnings
