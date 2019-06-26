@@ -21,10 +21,6 @@
       entity_id: 'input_boolean.theater_mode'
       state: 'off' 
   action:
-#    - service: script.amp_settings
-#      data:
-#        media_player: 'media_player.media_player_1'
-#        volume_level: 0.2
     - service: shell_command.play
       data_template:
         file: >

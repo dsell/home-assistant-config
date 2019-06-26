@@ -32,16 +32,36 @@
             {% set hour = now().strftime("%H")|int %}
           {% endif %}
           {% if now().strftime("%M")|int == 0 %}
+            {% if hour == 0 %}
+            midnight
+            {% elif hour == 12 %}
+            noon
+            {% else %}
             {{ hour }} O'clock
+            {% endif %}
           {% elif now().strftime("%M")|int == 15 %}
+            {% if hour == 0 %}
+            {% set hour = "midnight" %}
+            {% elif hour == 12 %}
+            {% set hour = "noon" %}
+            {% endif %}          
             a quarter after {{ hour }}
           {% elif now().strftime("%M")|int == 30 %}
+            {% if hour == 0 %}
+            12 thirty
+            {% else %}
             {{ hour }} thirty
+            {% endif %}
           {% elif now().strftime("%M")|int == 45 %}
             {% set hour = hour + 1 %}
             {% if hour > 12 %}
               {% set hour = hour - 12 %}
               {% set PM = true %}
+            {% endif %}
+            {% if hour == 0 %}
+            {% set hour = "midnight" %}
+            {% elif hour == 12 %}
+            {% set hour = "noon" %}
             {% endif %}
             a quarter til {{ hour }}
           {% endif %}
@@ -50,4 +70,4 @@
  #         {% else %}
  #           Aay eMm
  #         {% endif %}'
-#        dest_id: default
+        dest_id: default
