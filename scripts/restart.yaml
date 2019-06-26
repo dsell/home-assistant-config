@@ -2,7 +2,7 @@
 restart:
   alias: Restart
   sequence:
-  - service: shell_command.say
+  - service: notify.voice
     data:
       message: "'System restart initiated.'"
   - service: homeassistant.restart
