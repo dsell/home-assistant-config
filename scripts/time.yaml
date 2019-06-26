@@ -1,7 +1,7 @@
 say_time:
   alias: Say Time
   sequence:
-    - service: shell_command.say
+    - service: notify.voice
       data_template:
         message: >
           'The time is now
@@ -17,12 +17,11 @@ say_time:
           {% endif %}
           {{ hour }} 
           {% if minute < 10 %}
-            Ohh
+            Owe
           {% endif %}
           {{ minute }}
           {% if PM == true %}
             Pee eM
           {% else %}
-            Ayy eM
+            Aey eM
           {% endif %}'
-        dest_id: default
