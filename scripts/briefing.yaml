@@ -2,29 +2,22 @@
 briefing:
   alias: "Briefing"
   sequence:
-    - service: script.say_time
-      data:
-        dest_id: default
-    - delay: 
-        seconds: 4
     - service: script.say_date
-      data:
-        dest_in: default
     - delay: 
-        seconds: 8
-    - service: script.say_forecast
-      data:
-        dest_in: default
+        seconds: 6  
+    - service: script.say_time
     - delay: 
-        seconds: 6
+        seconds: 3
     - service: script.say_rise_set
-      data:
-        dest_in: default
     - delay:
         seconds: 5
     - service: script.say_moon_phase
     - delay:
-        seconds: 4
+        seconds: 5
+    - service: script.say_forecast
+    - delay: 
+        seconds: 6
     - service: script.say_nws_warnings
-      data:
-        dest_in: default
+    - delay:
+        seconds: 6
+    - service: script.say_temp
