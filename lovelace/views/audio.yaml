@@ -3,7 +3,6 @@ title: Audio
 icon: mdi:speaker
 columns: 3
 cards:
-  - type: 'custom:compact-custom-header'
   
 #----------------------------------
 

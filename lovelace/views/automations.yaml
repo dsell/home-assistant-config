@@ -4,8 +4,6 @@ title: Automations
 icon: mdi:settings-outline
 columns: 5
 cards:
-  - type: 'custom:compact-custom-header'    
-
 
 #----------------------------------
 

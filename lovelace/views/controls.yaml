@@ -4,7 +4,6 @@ title: Controls
 icon: mdi:toggle-switch
 columns: 5
 cards:
-  - type: 'custom:compact-custom-header'    
 
 #----------------------------------
 

@@ -3,7 +3,6 @@
 title: Dev
 icon: mdi:lead-pencil
 cards:
-  - type: 'custom:compact-custom-header'
     
   - type: entities
     title: Home Assistant

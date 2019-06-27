@@ -5,7 +5,6 @@
       from: 'off'
       to: 'on'
   action:
-    - service: script.remaining_timer
+    - service: shell_command.say
       data:
-        message: "I C U"
-        dest_id: DennisPhone
+        message: "hello world"

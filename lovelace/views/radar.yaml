@@ -8,7 +8,6 @@ cards:
 
   - type: vertical-stack
     cards:
-#      - type: 'custom:compact-custom-header'
       - type: iframe
         #title: Weather Radar
         aspect_ratio: 38%

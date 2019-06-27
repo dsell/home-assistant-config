@@ -9,7 +9,13 @@
 #
 title: Home Control Panel
 resources: !include_dir_list lovelace/resources
-      
+
+cch:
+    menu: show
+    options: clock
+    voice: show
+    clock_format: 12
+    
 views:
 
  - !include lovelace/views/home.yaml

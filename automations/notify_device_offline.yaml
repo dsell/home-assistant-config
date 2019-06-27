@@ -15,7 +15,8 @@
         data_template:
           notify_level: 1
           notify_dest: "default" 
-          notify_say: "{{ trigger.to_state.attributes.friendly_name }} is offline"
+          notify_say: >
+              {{ trigger.to_state.attributes.friendly_name }} is offline
           notify_title: "Home Assistant Device is Offline"
           notify_display: '{{ trigger.to_state.attributes.friendly_name }} is offline'
           notify_id: 'offline_alert'

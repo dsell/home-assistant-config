@@ -2,7 +2,7 @@
 
 wakeup:
   sequence:
-  - service: shell_command.say
+  - service: notify.voice
     data_template:
       data:
         message: 'Good Morning Dennis.'

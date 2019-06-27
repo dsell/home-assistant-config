@@ -6,13 +6,7 @@ title: My House
 icon: mdi:home-outline
 
 cards:
-  - type: 'custom:compact-custom-header'
-    main_config: true
-    menu: show
-    options: clock
-    voice: show
-    clock_format: 12
-    
+
 #------------------------------
 
   - type: weather-forecast

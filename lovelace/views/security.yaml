@@ -9,6 +9,4 @@ cards:
     cards:
       - type: iframe
         url: 'http://192.168.1.207:8765'
-      - type: custom:compact-custom-header
-
 
