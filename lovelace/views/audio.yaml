@@ -31,34 +31,6 @@ cards:
       entities:
         - entity_id: media_player.snapcast_client_7c_c7_09_b6_08_a7
           name: 'Kitchen'        
-    shortcuts:
-      columns: 3 # Max buttons per row
-      buttons:
-        # Start predefined playlist
-        - name: Deace
-          type: script
-          id: script.start_deace
-        - name: Dawson
-          type: script
-          id: script.start_dawson
-        - name: Worship
-          type: script
-          id: script.start_worship
-        - name: Blugrass
-          type: script
-          id: script.start_bluegrass
-        - name: Gospel
-          type: start
-          id: script.start_gospel
-        - name: Classical
-          type: script
-          id: script.start_classical              
-        - name: Christmas
-          type: script
-          id: script.start_christmas
-        - name: Sleep
-          type: script
-          id: script.start_sleep
   - type: custom:mini-media-player
     name: 'Media Player Notificatons'
     group: true      

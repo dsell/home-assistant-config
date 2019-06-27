@@ -5,6 +5,4 @@
       from: 'off'
       to: 'on'
   action:
-    - service: shell_command.say
-      data:
-        message: "hello world"
+    - service: shell_command.test
