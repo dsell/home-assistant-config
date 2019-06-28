@@ -5,16 +5,6 @@
     from: 'off'
     to: 'on'
   action:
-    - service: script.notify
-      data_template:
-        notify_title:  Dinner Bell
-        notify_say: >
-                      Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 9 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  > 14 %} Dinner {% else %} Supper {% endif %}
-        notify_dest: DennisPhone
-        notify_display: >
-                      Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 9 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  > 14 %} Dinner {% else %} Supper {% endif %}
-        notify_id: dinner_bell
-        notify_level: 3
     - service: shell_command.play
       data:
         file: "/config/audio/dinner_bell.wav"
