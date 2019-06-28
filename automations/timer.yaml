@@ -86,6 +86,9 @@
         dest_id: "DennisPhone"
         message: >-
           "OK,  Timer canceled."       
+    - service: notify.voice
+      data:
+        message: "OK, timer canceled"
           
 - alias: 'Timer Expired'
   trigger:
@@ -99,6 +102,9 @@
         dest_id: "DennisPhone"
         message: >-
          "Timer expired."
+    - service: notify.voice
+      data:
+        message: "Timer expired."
     - delay: 
         seconds: 2
     - service: input_boolean.turn_on
@@ -129,6 +135,10 @@
       data_template:
         dest_id: "DennisPhone"
         message: >-
+          OK,  Timer started for {% if (states("input_number.timerhours") | int) > 0 %} {{ states("input_number.timerhours") | int }} hours, {% endif %} {% if (states("input_number.timerminutes") | int) > 0 %} {{ states("input_number.timerminutes") | int }} minutes, {% endif %} {% if (states("input_number.timerseconds") | int) > 0 %} {{ states("input_number.timerseconds") | int }} seconds. {% endif %}
+    - service: notify.voice
+      data_template:
+        message: >-                 
           OK,  Timer started for {% if (states("input_number.timerhours") | int) > 0 %} {{ states("input_number.timerhours") | int }} hours, {% endif %} {% if (states("input_number.timerminutes") | int) > 0 %} {{ states("input_number.timerminutes") | int }} minutes, {% endif %} {% if (states("input_number.timerseconds") | int) > 0 %} {{ states("input_number.timerseconds") | int }} seconds. {% endif %}
     - service: script.reset_timer
       data_template:
