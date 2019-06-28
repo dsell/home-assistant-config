@@ -1,0 +1,16 @@
+- alias: "Intent Fan On"
+  trigger:
+    platform: event
+    event_type: rhasspy_FanOn
+  action:
+    - service: switch.turn_on
+      entity_id: switch.sonoff4_power_state
+
+- alias: "Intent iFan Off"
+  trigger:
+    platform: event
+    event_type: rhasspy_FanOff
+  action:
+    - service: switch.turn_off
+      entity_id: switch.sonoff4_power_state
+
