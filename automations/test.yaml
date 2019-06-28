@@ -1,7 +1,7 @@
 - alias: 'Test'
   trigger:
     - platform: state
-      entity_id: binary_sensor.test_motion
+      entity_id: input_boolean.test
       from: 'off'
       to: 'on'
   action:

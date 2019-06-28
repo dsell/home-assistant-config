@@ -1,4 +1,4 @@
-- alias: "Intent Get Date"
+- alias: "Intent Get Sunrise Sunset"
   trigger:
     platform: event
     event_type: rhasspy_GetSunRise

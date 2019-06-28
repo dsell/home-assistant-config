@@ -15,7 +15,7 @@
                       Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 9 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  > 14 %} Dinner {% else %} Supper {% endif %}
         notify_id: dinner_bell
         notify_level: 3
-    - service: notify.voice
+    - service: shell_command.play
       data:
         file: "/config/audio/dinner_bell.wav"
         

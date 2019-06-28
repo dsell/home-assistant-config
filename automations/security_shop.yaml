@@ -4,6 +4,10 @@
     entity_id: binary_sensor.test_motion
     from: 'off'
     to: 'on'
+  condition:
+    - condition: state
+      entity_id: switch.sonoff5_power_state
+      state: 'off'
   action:
   - service: script.notify
     data_template:

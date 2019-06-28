@@ -1,4 +1,4 @@
-- alias: "Intent Get Date"
+- alias: "Intent Get Moon Phase"
   trigger:
     platform: event
     event_type: rhasspy_GetMoonPhase

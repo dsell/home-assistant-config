@@ -1,4 +1,4 @@
-- alias: "Intent Get Date"
+- alias: "Intent Get Weather Alerts"
   trigger:
     platform: event
     event_type: rhasspy_GetNWSWarnings
