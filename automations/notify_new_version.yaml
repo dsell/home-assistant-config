@@ -15,8 +15,8 @@
       data_template:
         notify_title: Upgrade time!
         notify_say: >-
-          There is a Home Assistant upgrade for Hass.io pending!
-          Version {{ states('sensor.version_available') }} just got released!
+          "There is a Home Assistant upgrade for Hass.io pending!
+          Version {{ states('sensor.version_available') }} just got released!"
         notify_display: >-
           There is a Home Assistant upgrade for Hass.io pending!
           Version {{ states('sensor.version_available') }} just got released!
