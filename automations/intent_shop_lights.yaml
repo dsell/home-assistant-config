@@ -1,0 +1,16 @@
+- alias: "Intent Shop Lights On"
+  trigger:
+    platform: event
+    event_type: rhasspy_ShopLightsOn
+  action:
+  - service: switch.turn_on
+    entity_id: switch.sonoff5_power_state
+
+- alias: "Intent Shop Lights Off"
+  trigger:
+    platform: event
+    event_type: rhasspy_ShopLightsOff
+  action:
+  - service: switch.turn_off
+    entity_id: switch.sonoff5_power_state
+

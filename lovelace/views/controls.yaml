@@ -30,6 +30,13 @@ cards:
         name: Living Room Fan
         icon: mdi:fan
       
+  - type: entities
+    title: "Shop Lights"
+    show_header_toggle: false             
+    entities:                             
+      - entity: switch.sonoff5_power_state
+        name: Shop Lights           
+        icon: mdi:lightbulb-outline
       
 #----------------------------------
 
