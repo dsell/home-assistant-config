@@ -1,0 +1,7 @@
+- alias: "Intent Get Quote"
+  trigger:
+    platform: event
+    event_type: rhasspy_GetQuote
+  action:
+    - service: script.say_quote
+

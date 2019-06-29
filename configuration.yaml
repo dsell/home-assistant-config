@@ -207,8 +207,9 @@ shell_command:
   start_christmas: start_christmas.sh
   start_sleep: start_sleep.sh
   say: 'curl -X POST "http://192.168.1.107:12101/api/text-to-speech" -H  "accept: text/plain" -H  "Content-Type: text/plain" -d {{message}}'
+  sayf: 'curl -X POST "http://192.168.1.107:12101/api/text-to-speech" -H  "accept: text/plain" -H  "Content-Type: text/plain" -d "@{{ file }}"'
   play: 'curl -X POST "http://192.168.1.107:12101/api/play-wav" -H  "accept: text/plain" -H  "Content-Type: audio/wav" --data-binary "@{{ file }}"'
-  test: 'sh ssh dsell@192.168.1.212 touch test.txt'
+  restart: 'bash /config/restart.sh'
 
 notify:
   - name: voice
