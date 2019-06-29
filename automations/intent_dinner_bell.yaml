@@ -1,0 +1,8 @@
+- alias: "Intent Ring Dinner Bell"
+  trigger:
+    platform: event
+    event_type: rhasspy_DinnerBell
+  action:
+  - service: switch.turn_on
+    entity_id: input_boolean.dinner_bell
+
