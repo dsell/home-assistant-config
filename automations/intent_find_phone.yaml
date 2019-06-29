@@ -1,0 +1,8 @@
+- alias: "Intent Find My Phone"
+  trigger:
+    platform: event
+    event_type: rhasspy_FindPhone
+  action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.zanzito_play_alarm
+
