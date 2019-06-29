@@ -21,3 +21,9 @@ briefing:
     - delay:
         seconds: 6
     - service: script.say_temp
+    - delay:
+        seconds: 5
+    - service: script.say_quote
+    - delay:
+        seconds: 10
+
