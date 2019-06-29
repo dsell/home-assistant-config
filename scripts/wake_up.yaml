@@ -2,21 +2,20 @@
 
 wakeup:
   sequence:
-  - service: notify.voice
-    data_template:
-      data:
-        message: 'Good Morning Dennis.'
-  - service: media_player.play_media
+  - service: shell_command.play
     data:
-      entity_id: media_player.mpd
-      media_content_type: playlist
-      media_content_id: Classical
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.mpd
-      volume_level: 0.60
-  - service: media_player.shuffle_set
-    data:
-      entity_id: media_player.mpd
-      shuffle: true
+      file: "/config/audio/wake_up_call.wav"
+#  - service: media_player.play_media
+#    data:
+#      entity_id: media_player.mpd
+#      media_content_type: playlist
+#      media_content_id: Classical
+#  - service: media_player.volume_set
+#    data:
+#      entity_id: media_player.mpd
+#      volume_level: 0.60
+#  - service: media_player.shuffle_set
+#    data:
+#      entity_id: media_player.mpd
+#      shuffle: true
 
