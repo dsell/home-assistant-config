@@ -1,8 +1,0 @@
-          
-restart:
-  alias: Restart
-  sequence:
-  - service: notify.voice
-    data:
-      message: "'System restart initiated.'"
-  - service: homeassistant.restart
