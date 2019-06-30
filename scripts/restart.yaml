@@ -1,0 +1,5 @@
+restart:
+  alias: "System Restart"
+  sequence:
+    - service: shell_command.restart
+
