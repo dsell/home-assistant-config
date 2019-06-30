@@ -1,0 +1,5 @@
+- platform: aprs
+  username: !secret APRS_LOGIN
+  password: !secret APRS_PASSWORD
+  callsigns:
+    - !secret APRS_CALLSIGN
