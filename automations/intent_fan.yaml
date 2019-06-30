@@ -6,7 +6,7 @@
     - service: switch.turn_on
       entity_id: switch.sonoff4_power_state
 
-- alias: "Intent iFan Off"
+- alias: "Intent Fan Off"
   trigger:
     platform: event
     event_type: rhasspy_FanOff
