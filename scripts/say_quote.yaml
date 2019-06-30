@@ -1,0 +1,9 @@
+say_quote:    
+  alias: Say Quote         
+  sequence:
+    - service: notify.voice
+      data:
+        message: "The quote of the day is;"
+    - service: shell_command.sayf
+      data_template:
+        file: "/config/quote.txt"
