@@ -1,0 +1,27 @@
+say_time:
+  alias: Say Time
+  sequence:
+    - service: notify.voice
+      data_template:
+        message: >
+          'The time is now
+          {% set minute = now().strftime("%M")|int %}
+          {% set hour = now().strftime("%H")|int %}
+          {% if hour > 12 %}
+            {% set PM = true %}
+            {% set hour = hour - 12 %}
+          {% elif hour == 12 %}
+            {% if minute > 0 %}
+              {% set PM = true %}
+            {% endif %}
+          {% endif %}
+          {{ hour }} 
+          {% if minute < 10 %}
+            Owe
+          {% endif %}
+          {{ minute }}
+          {% if PM == true %}
+            Pee eM
+          {% else %}
+            Aey eM
+          {% endif %}'
