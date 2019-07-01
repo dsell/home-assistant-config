@@ -6,7 +6,7 @@
     condition: and
     conditions:
     - condition: template
-      value_template: '{{ trigger.from_state.state < trigget.to_state.state }}'
+      value_template: '{{ trigger.from_state.state < trigger.to_state.state }}'
     - condition: template
       value_template: '{{ trigger.from_state.state < 1 }}'
   action:
@@ -28,7 +28,7 @@
     condition: and
     conditions:
       - condition: template
-        value_template: '{{ trigger.from_state.state < trigget.to_state.state }}'
+        value_template: '{{ trigger.from_state.state < trigger.to_state.state }}'
       - condition: template
         value_template: '{{ trigger.from_state.state > 0 }}'
   action:
@@ -50,7 +50,7 @@
     condition: and
     conditions:
     - condition: template
-      value_template: '{{ trigger.from_state.state > trigget.to_state.state }}'
+      value_template: '{{ trigger.from_state.state > trigger.to_state.state }}'
     - condition: template
       value_template: '{{ trigger.to_state.state > 0 }}'
   action:
