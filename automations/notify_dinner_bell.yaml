@@ -8,7 +8,16 @@
     - service: shell_command.play
       data:
         file: "/config/audio/dinner_bell.wav"
-        
+    - service: script.notify
+      data_template:
+        notify_title:  Dinner Bell
+        notify_say: >
+                      'Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 10 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  < 15 %} Dinner {% else %} Supper {% endif %}'
+        notify_dest: DennisPhone
+        notify_display: >
+                      'Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 10 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  < 15 %} Dinner {% else %} Supper {% endif %}'
+        notify_id: dinner_bell
+        notify_level: 3        
         
 - alias: Notification Dinner Bell Off
   trigger:
@@ -20,3 +29,11 @@
     - service: script.notify_clear
       data:
         notify_id: dinner_bell
+    - service: script.notify
+      data:
+        notify_title: "Dinner Bell ACK"
+        notify_say: >
+            'Dinner bell acknowledged'
+        notify_display: 'Dinner bell acknowledged.'
+        notify_id: dinner_bell_ack
+        notify_level: 3 

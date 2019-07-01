@@ -95,6 +95,7 @@ shopping_list:
 
 timer:
   user_timer:
+    name: 'User Timer'
   
 octoprint:
   host: !secret OCTOPRINT_HOST_IP
@@ -237,17 +238,17 @@ alert:
       - 5
     notifiers:
       - voice
-  dinner_bell:
-    name: "Alert Dinner Bell"
-    entity_id: input_boolean.dinner_bell
-    message: 'Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 9 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  > 14 %} Dinner {% else %} Supper {% endif %}'
-    repeat:
-      - 20
-      - 10
-      - 5
-    notifiers:
-      - voice
-    done_message: 'Dinner bell acknowledged'
+#  dinner_bell:
+#    name: "Alert Dinner Bell"
+#    entity_id: input_boolean.dinner_bell
+#    message: 'Time to eat {% if  states.sensor.time.state.split(":")[0]|int  < 9 %} Breakfast {% elif  states.sensor.time.state.split(":")[0]|int  > 14 %} Dinner {% else %} Supper {% endif %}'
+#    repeat:
+#      - 20
+#      - 10
+#      - 5
+#    notifiers:
+#      - voice
+#    done_message: 'Dinner bell acknowledged'
     
 
       
