@@ -66,8 +66,8 @@
       notify_dest: "default" 
       notify_say: "'Warning!  Phone battery below 50% charge.'"
       notify_display: "Phone Battery below 50%"
-      notify_title: "Phone Low"
-      notify_id: 'phone_batt_low'
+      notify_title: "Phone Low Charge"
+      notify_id: 'phone_charge'
       
 - alias: Notification Phone very low
   trigger:
@@ -79,8 +79,10 @@
     data:
       dest_id: "default" 
       message: "'Warning!  Phone battery below 25% charge.'"
-  - service: persistent_notification.create
+  - service: script.notify
     data:
-      message: "Phone Battery below 25%"
+      notify_title: "Phone Charge Low"
+      notify_say: "Phone Battery below 25%"
       title: "Phone Low"
-      notification_id: phone_batt_very_low
+      notify_id: 'phone_charge'
+      notify_display: phone_batt_very_low
