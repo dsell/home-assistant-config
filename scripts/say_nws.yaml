@@ -8,5 +8,5 @@ say_nws_warnings:
           There are no currently active weather alerts
           {% else %}
           The current weather alerts are; 
-          {{ states.sensor.nws_alerts.spoken_desc }}
+          {{ states.sensor.nws_alerts.attributes.spoken_desc }}
           {% endif %}
